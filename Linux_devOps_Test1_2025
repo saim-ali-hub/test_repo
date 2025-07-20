@@ -1,0 +1,37 @@
+Linux DevOps Test1 – 2025 
+
+Note: Make sure your present working directory (pwd) should be your home directory (~).
+
+1.	Create a nested directory structure: ~/alpha/beta/logs.
+
+2.	Create a file ~/alpha/beta/logs/sysinfo.txt with the exact content:
+This is a test file for Linux practice lab
+
+3.	Create the directory structure ~/configs/system/ and copy the /etc/os-release file in ~/configs/system/.
+
+4.	Create a directory named new_dir inside the beta directory located in ~/alpha.
+
+5.	Create an empty file named debug.log in the ~/configs directory.
+
+6.	Read /etc/hostname using the cat command and redirect the output to ~/alpha/beta/logs/hostinfo.txt.
+
+7.	Use the head command to read the first 3 lines of /etc/resolv.conf and save output to ~/configs/shell_info.txt.
+
+8.	Get the last 5 lines of /tmp/passwd_bk and append them to ~/alpha/beta/end_users.txt.
+
+9.	Use the file command to check the types of /etc/shadow and /bin/bash, and redirect the output to ~/alpha/beta/file_types.txt (overwrite if it exists).
+
+10.	Copy the file shell_info.txt in the ~/configs directory and name it shell.txt, keeping it in the same location.
+
+11.	Copy the directory ~/configs/system to ~/alpha/beta/ and rename it to system_bak.
+
+12.	Change to the ~/alpha/beta/logs directory, go up one level, and run pwd > pwd_check.txt to confirm your location.
+
+13.	Verify your current directory should be ~/alpha/beta. Then long list contents of logs directory and redirect the output to ~/alpha/dir_list.txt.
+
+14.	Check the kernel version and append the output to ~/alpha/myserver_info.
+
+15.	Check the cpu detail information and append the output to ~/alpha/myserver_info.
+
+Note: if you are done. Please execute following command:
+bash  /usr/test1.sh	
