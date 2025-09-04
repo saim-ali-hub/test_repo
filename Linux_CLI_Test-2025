@@ -17,7 +17,7 @@
       color: white;
       display: flex;
       flex-direction: column;
-      padding: 20px;
+      padding: 30px;
     }
     .sidebar h2 {
       font-size: 18px;
@@ -209,7 +209,7 @@
 
   </div>
 
-  <script>
+   <script>
     function showTab(id, el) {
       document.querySelectorAll('.task').forEach(t => t.classList.remove('active'));
       document.getElementById(id).classList.add('active');
@@ -225,4 +225,13 @@
         allButtons.forEach(btn => btn.classList.remove('done', 'revisit'));
 
         if (button.textContent === 'Done') {
-          button.classList
+          button.classList.add('done');
+        } else if (button.textContent === 'Revisit') {
+          button.classList.add('revisit');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
