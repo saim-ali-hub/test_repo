@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux CLI Practical Test – Batch 2025</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      background: #2c3e50;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .tab-button {
+      background: none;
+      border: none;
+      color: white;
+      text-align: left;
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .tab-button:hover, .tab-button.active {
+      background: #34495e;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .task {
+      background: #f4f4f4;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+    .task.active {
+      display: block;
+    }
+    .task h3 {
+      margin-top: 0;
+    }
+    .subtask {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 20px;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+    .subtask span {
+      flex-shrink: 0;
+    }
+    .buttons button {
+      margin-left: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      min-width: 80px;
+    }
+    .done {
+      background-color: #2ecc71;
+      color: white;
+    }
+    .revisit {
+      background-color: #e67e22;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🧑‍💻 Linux CLI Test – 2025</h2>
+    <button class="tab-button active" onclick="showTab('section1', this)">1. Manual User Creation</button>
+    <button class="tab-button" onclick="showTab('section1-1', this)">1.1 Troubleshooting Accounts</button>
+    <button class="tab-button" onclick="showTab('section1-2', this)">1.2 User Migration</button>
+    <button class="tab-button" onclick="showTab('section3', this)">3. SSH Logs</button>
+    <button class="tab-button" onclick="showTab('section3-1', this)">3.1 SSH Key Auth</button>
+    <button class="tab-button" onclick="showTab('section4', this)">4. Patching & YUM</button>
+    <button class="tab-button" onclick="showTab('section5', this)">5. Web Server Setup</button>
+    <button class="tab-button" onclick="showTab('section6', this)">6. Network Troubleshooting</button>
+  </div>
+
+  <div class="content">
+
+    <!-- SECTION 1 -->
+    <div id="section1" class="task active">
+      <h3>🧩 Section 1: Manual User Account Creation</h3>
+      <p><b>Scenario:</b> Create a user <code>baker</code> manually (without useradd).</p>
+      <div class="subtask">1. Backup /etc/passwd to ~/passwd.org-8-30-25 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Manually add the baker entry to /etc/passwd <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Backup /etc/group to ~/group.orig.8-30-25 and add baker group <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Create /home/baker directory <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Copy .bash* files from /etc/skel to /home/baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Change ownership of /home/baker to baker:baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Set a password for baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Switch to baker with su - baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Check UID, GID, and groups for baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">10. Add baker to wheel group <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+    <!-- SECTION 1.1 -->
+    <div id="section1-1" class="task">
+      <h3>🧩 Section 1.1: Troubleshooting User Accounts</h3>
+      <p><b>Scenario:</b> The baker user can’t log in. Diagnose and fix.</p>
+      <div class="subtask">1. Delete .bash* files from /home/baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Try logging in as baker (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Lock baker in /etc/passwd with * <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Try switching to baker again (observe) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Restore .bash* files from /etc/skel <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Unlock baker in /etc/passwd <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Confirm login works <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+    <!-- SECTION 1.2 -->
+    <div id="section1-2" class="task">
+      <h3>🧩 Section 1.2: User Migration Mini Project</h3>
+      <p><b>Scenario:</b> Migrate users & home data from LINOOP to your VM.</p>
+      <div class="subtask">1. Identify files storing user info, groups, passwords, home data <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Check /home size on LINOOP & free space on VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Create .tar.gz of /home, /etc/passwd, /etc/group, /etc/shadow <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Transfer archive via scp <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Backup existing config files <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Extract & copy over migrated files <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Compare file sizes (before/after) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Switch to migrated user & verify login <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div id="section3" class="task">
+      <h3>🧩 Section 3: SSH Login & Authentication Logs</h3>
+      <p><b>Scenario:</b> Developer reports failed SSH login. Investigate.</p>
+      <div class="subtask">1. SSH into VM as baker and observe behavior <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Locate log file recording SSH attempts <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Search logs for baker or sshd entries <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Identify cause: wrong password, lockout, service? <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Save summary to /project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+    <!-- SECTION 3.1 -->
+    <div id="section3-1" class="task">
+      <h3>🧩 Section 3.1: SSH Key-Based Authentication</h3>
+      <p><b>Scenario:</b> Setup passwordless SSH login using keys.</p>
+      <div class="subtask">1. Check for .ssh directory and existing keys <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. If exists, remove it to start fresh <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Generate new RSA key pair <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Copy public key to LINOOP server <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Test SSH without password prompt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div id="section4" class="task">
+      <h3>🧩 Section 4: Patching, Updates & YUM</h3>
+      <p><b>Scenario:</b> Apply both security-only and full updates.</p>
+      <div class="subtask">1. Check /boot space <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Record current kernel version <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. List mounted file systems <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Check total disk usage <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. List running services <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Check security-only YUM updates <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Apply security updates, log to ~/security-patches <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Apply full system updates <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Reboot & check kernel version again <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">10. Confirm critical services running post-update <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div id="section5" class="task">
+      <h3>🧩 Section 5: Web Server Setup & HTML Deployment</h3>
+      <p><b>Scenario:</b> Deploy Apache and serve custom HTML.</p>
+      <div class="subtask">1. Check if httpd installed <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Enable & start httpd service <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Confirm listening on port 80 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Allow HTTP firewall traffic <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Temporarily disable SELinux <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Test web server in browser <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Replace index.html with custom page <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Reload browser & confirm content <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div id="section6" class="task">
+      <h3>🧩 Section 6: Network Troubleshooting & Diagnostics</h3>
+      <p><b>Scenario:</b> Ticket: "Host unreachable — diagnose & resolve".</p>
+      <div class="subtask">1. List interfaces using 2–3 commands <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Check ens192 connectivity to switch <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Show IP/subnet/gateway for ens192 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Ping system default gateway <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Ping external IP (8.8.8.8) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Resolve DNS names (google.com, vc8.linoop.local) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Identify file for manual hostname mapping <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Use traceroute to cnn.com <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Add 2nd NIC in vCenter & activate in VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">10. Get new IP, test connectivity via 2nd NIC <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    </div>
+
+  </div>
+
+  <script>
+    function showTab(id, el) {
+      document.querySelectorAll('.task').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    document.querySelectorAll('.buttons button').forEach(button => {
+      button.addEventListener('click', function () {
+        const parent = button.closest('.subtask');
+        const allButtons = parent.querySelectorAll('button');
+        allButtons.forEach(btn => btn.classList.remove('done', 'revisit'));
+
+        if (button.textContent === 'Done') {
+          button.classList
