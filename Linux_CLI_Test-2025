@@ -160,7 +160,7 @@
     <h3>💡 Hints & Tips</h3>
   <ul>
     <li>Always backup system files first</li>
-    <li>run the command "sudo /usr/local/bin/backup_user.sh" it executed command "tar -cvzf /home/$USER /etc/passwd /etc/group and /etc/shadow. You as a regular user can copy and create tarball of /etc/shadow sudo elevated your privilege</li>
+    <li>When you execute the command "sudo /usr/local/bin/backup_user.sh" the script internally runs "tar -cvzf data.tar.gz /home/$USER /etc/passwd /etc/group /etc/shadow" As a result, a compressed archive named data.tar.gz is created. Although you are a regular user, using sudo temporarily elevates your privileges, allowing you to include system files such as /etc/shadow in the archive, which would otherwise be inaccessible.</li>
   </ul>
 
   <h3>🧠 Summary</h3>
