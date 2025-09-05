@@ -103,9 +103,9 @@
     <button class="tab-button active" onclick="showTab('section1', this)">1. Overview</button>
     <button class="tab-button" onclick="showTab('section2', this)">2. User Migration Mini Project</button>
     <button class="tab-button" onclick="showTab('section2-1', this)">2.1 Manual User Creation</button>
-    <button class="tab-button" onclick="showTab('section2-2', this)">2.2 Troubleshooting Accounts</button>
-    <button class="tab-button" onclick="showTab('section3', this)">3. SSH Logs</button>
-    <button class="tab-button" onclick="showTab('section3-1', this)">3.1 SSH Key Auth</button>
+    <button class="tab-button" onclick="showTab('section2-2', this)">2.2 Troubleshooting User Accounts</button>
+    <button class="tab-button" onclick="showTab('section3', this)">3. SSH Login & Authentication logs</button>
+    <button class="tab-button" onclick="showTab('section3-1', this)">3.1 SSH Key Based Authentication</button>
     <button class="tab-button" onclick="showTab('section4', this)">4. Patching & YUM</button>
     <button class="tab-button" onclick="showTab('section4-1', this)">4.1 Post-Patching</button>
     <button class="tab-button" onclick="showTab('section5', this)">5. Web Server Setup</button>
