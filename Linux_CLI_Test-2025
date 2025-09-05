@@ -405,8 +405,8 @@
       <div class="subtask">8. Redirect updated packages to '/tmp/project25/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🔄 Full System Update</h3>
-      <div class="subtask">9. Check for all available software updates.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">10. Apply full system updates (non-security included) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Check for all available software updates and store in /tmp/project25/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">10. Apply full system updates (non-security included) and upon completion of update reboot your machine. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     </div>
 
