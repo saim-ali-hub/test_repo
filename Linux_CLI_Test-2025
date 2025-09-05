@@ -467,7 +467,7 @@
     <h3>🏢 Real-World Scenario</h3>
     <p>
     Your team needs a status dashboard published. You’re tasked with:
-    <blockquote>“Set up Apache on your VM and deploy an internal LINOOP dashboard page.”</blockquote>
+    <blockquote>“Set up Apache on your VM and deploy an custome page.”</blockquote>
     You’ll configure Apache, allow web traffic, and publish custom content.
     </p>
 
