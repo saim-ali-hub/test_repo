@@ -148,7 +148,7 @@
   </p>
  <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Migrate users & home data from LINOOP to your VM.</p>
-      <div class="subtask">1. On the linoop.ddns.net server (10.1.10.100), create a compressed archive named data.tar.gz in your home directory. The archive should include your entire /home/$USER directory along with the files /etc/passwd, /etc/group, and /etc/shadow. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">1. On the linoop.ddns.net server (10.1.10.100), navigate to your home directory and run the command "sudo /usr/local/bin/backup_user.sh". This will create a compressed archive named data.tar.gz in your home directory. The archive will include your entire home directory (/home/$USER) as well as the system files /etc/passwd, /etc/group, and /etc/shadow. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">2. Use the scp command to securely transfer the data.tar.gz file from the remote server linoop.ddns.net (10.1.10.100) to your VM under the /tmp/project25/ directory. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">3. Extract the contents of the transferred data.tar.gz archive inside the /tmp/project25/ directory.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">4. On your VM, create a backup of your existing /home/$USER directory along with the files /etc/passwd, /etc/group, and /etc/shadow. Store this backup as a compressed archive named vm_files.tar.gz inside /tmp/project25/. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
