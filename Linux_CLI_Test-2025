@@ -101,9 +101,9 @@
   <div class="sidebar">
     <h2>💻 Linux CLI Test – 2025</h2>
     <button class="tab-button active" onclick="showTab('section1', this)">1. Overview</button>
-    <button class="tab-button" onclick="showTab('section2', this)">2. Manual User Creation</button>
-    <button class="tab-button" onclick="showTab('section2-1', this)">2.1 Troubleshooting Accounts</button>
-    <button class="tab-button" onclick="showTab('section2-2', this)">2.2 User Migration</button>
+    <button class="tab-button" onclick="showTab('section2', this)">2. User Migration Mini Project</button>
+    <button class="tab-button" onclick="showTab('section2-1', this)">2.1 Manual User Creation</button>
+    <button class="tab-button" onclick="showTab('section2-2', this)">2.2 Troubleshooting Accounts</button>
     <button class="tab-button" onclick="showTab('section3', this)">3. SSH Logs</button>
     <button class="tab-button" onclick="showTab('section3-1', this)">3.1 SSH Key Auth</button>
     <button class="tab-button" onclick="showTab('section4', this)">4. Patching & YUM</button>
@@ -132,6 +132,50 @@
    </div> </h3>
 
       <!-- SECTION 2 -->
+    <div id="section2-2" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 2.2: User Migration Mini Project
+  </h2>
+
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    Move users from one server to another by backing up and restoring core identity and home directory files.
+  </p>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <p>
+    You are asked to migrate all users and home data from LINOOP server to your new VM.
+  </p>
+ <h3>✅ Tasks</h3>
+      <p><b>Scenario:</b> Migrate users & home data from LINOOP to your VM.</p>
+      <div class="subtask">1. On the linoop.ddns.net server (10.1.10.100), create a compressed archive named data.tar.gz in your home directory. The archive should include your entire /home/$USER directory along with the files /etc/passwd, /etc/group, and /etc/shadow. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Use the scp command to securely transfer the data.tar.gz file from the remote server linoop.ddns.net (10.1.10.100) to your VM under the /tmp/project25/ directory. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Extract the contents of the transferred data.tar.gz archive inside the /tmp/project25/ directory.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. On your VM, create a backup of your existing /home/$USER directory along with the files /etc/passwd, /etc/group, and /etc/shadow. Store this backup as a compressed archive named vm_files.tar.gz inside /tmp/project25/. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Replace the /home/$USER directory and the files /etc/passwd, /etc/group, and /etc/shadow on your VM with the corresponding migrated versions located in the home and etc directories under /tmp/project25/.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">6. Search (grep) for the user saim_ali in your current /etc/passwd file and save the matching entry into /tmp/project25/vm_info.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">7. Switch to your user account on the new VM (after the migrated /etc/passwd, /etc/group, and /etc/shadow files from linoop.ddns.net have been applied). Run the pwd command and redirect its output to /tmp/project/login_file.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">8. Create a new user using the useradd command. The username should follow the format firstname_lastname and assign the password of your choice. Ensure that the first and last name match the credentials you use for VPN login.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+    <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Always backup system files first</li>
+    <li>Use <code>diff</code> or <code>cmp</code> to compare before/after</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You've performed a user migration using system-level tools and secure archiving</li>
+  </ul>
+
+  <h3>📝 Resume Bullets</h3>
+  <ul>
+    <li>Migrated users and home directories between Linux servers using tar and scp</li>
+    <li>Preserved system integrity by managing UID/GID mappings and secure backups</li>
+  </ul>
+  </div>
+
+  <!-- SECTION 2.1 -->
   <div id="section2" class="task">
   <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
     🧩 Section 2: Manual User Account Creation
@@ -178,8 +222,8 @@
     <li>Configured login environments and access permissions</li>
   </ul>
 </div>
-
-   <!-- SECTION 2.1 -->
+    <!-- SECTION 2.2 -->
+    
   <div id="section2-1" class="task">
   <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
     🧩 Section 2.1: Troubleshooting User Accounts
@@ -221,50 +265,6 @@
     <li>Diagnosed account lockouts and repaired system-level authentication settings</li>
   </ul>
 </div>
-
-    <!-- SECTION 2.2 -->
-  <div id="section2-2" class="task">
-  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
-    🧩 Section 2.2: User Migration Mini Project
-  </h2>
-
-  <h3>📘 What This Section Teaches</h3>
-  <p>
-    Move users from one server to another by backing up and restoring core identity and home directory files.
-  </p>
-
-  <h3>🏢 Real-World Scenario</h3>
-  <p>
-    You are asked to migrate all users and home data from LINOOP server to your new VM.
-  </p>
- <h3>✅ Tasks</h3>
-      <p><b>Scenario:</b> Migrate users & home data from LINOOP to your VM.</p>
-      <div class="subtask">1. Identify files storing user account info, passwords, groups, and home data; save absolute paths to /tmp/project25/vm_info.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">2. Check /home/$USER size on linoop.ddns.net using 'du -sh' and append output to /tmp/project25/vm_info.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">3. On linoop.ddns.net, create data.tar.gz archive containing vm_info.txt, /home/$USER, /etc/passwd, /etc/group, /etc/shadow <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">4. Transfer data.tar.gz from linoop.ddns.net to your VM /tmp directory via scp <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">5. Extract the migrated files in /tmp directory <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">6. Backup existing /home/$USER, /etc/passwd, /etc/group, /etc/shadow files on your VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">7. Compare original and migrated file sizes <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">8. Switch to a migrated user and verify login <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-
-    <h3>💡 Hints & Tips</h3>
-  <ul>
-    <li>Always backup system files first</li>
-    <li>Use <code>diff</code> or <code>cmp</code> to compare before/after</li>
-  </ul>
-
-  <h3>🧠 Summary</h3>
-  <ul>
-    <li>You've performed a user migration using system-level tools and secure archiving</li>
-  </ul>
-
-  <h3>📝 Resume Bullets</h3>
-  <ul>
-    <li>Migrated users and home directories between Linux servers using tar and scp</li>
-    <li>Preserved system integrity by managing UID/GID mappings and secure backups</li>
-  </ul>
-  </div>
 
     <!-- SECTION 3 -->
     <div id="section3" class="task">
