@@ -41,9 +41,9 @@
       overflow-y: auto;
     }
     .task {
-      background-color: #22222;
-      color: #rgb(0, 0, 255);
-      font-size: 14px;
+      background-color: #add8e6;
+      color: black;
+      font-size: 16px;
       font-weight: bold;
       padding: 10px;
       margin: 20px 0;
@@ -52,6 +52,18 @@
     }
     .task.active {
       display: block;
+    }
+    .task h2 {
+     color: #1a5276;
+     font-size: 26px;
+     font-weight: 900;
+     margin-bottom: 15px;
+    }
+    .task h3 {
+     color: #d35400;
+     font-size: 20px;
+     margin-top: 15px;
+     margin-bottom: 10px;
     }
     .task h3 {
       margin-top: 0;
@@ -85,144 +97,473 @@
   </style>
 </head>
 <body>
+
   <div class="sidebar">
-  <h2>🧑<200d>💻 Linux CLI Test – 2025</h2>
+    <h2>💻 Linux CLI Test – 2025</h2>
     <button class="tab-button active" onclick="showTab('section1', this)">1. Overview</button>
-    <button class="tab-button active" onclick="showTab('section1', this)">2. Manual User Creation</button>
-    <button class="tab-button" onclick="showTab('section1-1', this)">2.1 Troubleshooting Accounts</button>
-    <button class="tab-button" onclick="showTab('section1-2', this)">2.2 User Migration</button>
+    <button class="tab-button" onclick="showTab('section2', this)">2. Manual User Creation</button>
+    <button class="tab-button" onclick="showTab('section2-1', this)">2.1 Troubleshooting Accounts</button>
+    <button class="tab-button" onclick="showTab('section2-2', this)">2.2 User Migration</button>
     <button class="tab-button" onclick="showTab('section3', this)">3. SSH Logs</button>
     <button class="tab-button" onclick="showTab('section3-1', this)">3.1 SSH Key Auth</button>
     <button class="tab-button" onclick="showTab('section4', this)">4. Patching & YUM</button>
+    <button class="tab-button" onclick="showTab('section4-1', this)">4.1 Post-Patching</button>
     <button class="tab-button" onclick="showTab('section5', this)">5. Web Server Setup</button>
     <button class="tab-button" onclick="showTab('section6', this)">6. Network Troubleshooting</button>
+
   </div>
 
   <div class="content">
 
     <!-- SECTION 1 -->
     <div id="section1" class="task active">
-      <h3>🧩 Section 1: Overview</h3>
-      <p><b>Welcome to your Linux CLI Practical Test. This test is designed to simulate **real-world job tasks** for a Junior to Intermediate Linux System Administrator. Each section includes: </b></p>
-	<div class="subtask"> * 📘 What you'll learn (philosophy)</div>
-	<div class="subtask"> * 🏢 Real job use cases</div>
-	<div class="subtask"> * ✅ Hands-on tasks (NO answers provided)</div>
-	<div class="subtask"> * 💡 Helpful hints</div>
-	<div class="subtask"> * 🧠 Summary of concepts</div>
-	<div class="subtask"> * 📝 Resume-ready bullet points</div>
-      <p><b> You are expected to complete the tasks **on your own VM in vcenter** and document outputs where needed.</b></p>
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+       🧩 Section 1: Overview
+    </h2>
 
+     <h3> <p><b>Welcome to your Linux CLI Practical Test. This test is designed to simulate **real-world job tasks** for a Junior to Intermediate Linux System Administrator. Each section includes: </b></p> </h3>
+        <div class="subtask"> * 📘 What you'll learn (philosophy)</div>
+        <div class="subtask"> * 🏢 Real job use cases</div>
+        <div class="subtask"> * ✅ Hands-on tasks (NO answers provided)</div>
+        <div class="subtask"> * 💡 Helpful hints</div>
+        <div class="subtask"> * 🧠 Summary of concepts</div>
+        <div class="subtask"> * 📝 Resume-ready bullet points</div>
+     <h3> <p><b> You are expected to complete the tasks **on your own VM in vcenter** and document outputs where needed.</b></p>
+   </div> </h3>
 
-    <!-- SECTION 2 -->
-    <div id="section2" class="task active">
-      <h3>🧩 Section 2: Manual User Account Creation</h3>
-      <p><b>Scenario:</b> Create a user <code>baker</code> manually (without useradd).</p>
-      <div class="subtask">1. Backup /etc/passwd to ~/passwd.org-8-30-25 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Manually add the baker entry to /etc/passwd <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Backup /etc/group to ~/group.orig.8-30-25 and add baker group <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Create /home/baker directory <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Copy .bash* files from /etc/skel to /home/baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Change ownership of /home/baker to baker:baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Set a password for baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Switch to baker with su - baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">9. Check UID, GID, and groups for baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">10. Add baker to wheel group <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-    </div>
+      <!-- SECTION 2 -->
+  <div id="section2" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 2: Manual User Account Creation
+  </h2>
 
-    <!-- SECTION 2.1 -->
-    <div id="section2-1" class="task">
-      <h3>🧩 Section 2.1: Troubleshooting User Accounts</h3>
-      <p><b>Scenario:</b> The baker user can’t log in. Diagnose and fix.</p>
-      <div class="subtask">1. Delete .bash* files from /home/baker <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Try logging in as baker (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Lock baker in /etc/passwd with * <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Try switching to baker again (observe) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Restore .bash* files from /etc/skel <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Unlock baker in /etc/passwd <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Confirm login works <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-    </div>
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    Understand how Linux manages users in <code>/etc/passwd</code> and
+    <code>/etc/group</code>. Manual account creation helps you learn the
+    foundation of Linux identity management.
+  </p>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <p>
+    Create a user <code>baker</code> manually without using <code>useradd</code>.
+    You must set up the home directory, shell, group, and password manually.
+  </p>
+
+  <h3>✅ Tasks</h3>
+  <div class="subtask">1. Switch to root ser and take Backup '/etc/passwd' to '~/passwd.org-8-30-25'<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">2. Manually add the 'baker' user entry to '/etc/passwd'.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">3. Backup '/etc/group' to '~/group.orig.8-30-25'. Add 'baker' group entry /etc/group. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">4. Create '/home/baker' and set permissions 700. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">5. Copy '.*' files from /etc/skel to '/home/baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">6. Change ownership of '/home/baker' to 'baker:baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">7. Set a password 'Linux@linoop' for 'baker' user <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">8. Switch to 'baker' with su - baker command <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">9. Check UID, GID, and groups for baker with single command and store inside /tmp/project25/user_trouble.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">10. Add 'baker' to the wheel group <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+ <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Use <code>:</code> as the field separator in <code>/etc/passwd</code></li>
+    <li>Use <code>chown -R</code> to assign ownership of directories</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You now know how to manually add users, groups, and configure login environments.</li>
+  </ul>
+
+  <h3>📝 Resume Bullets</h3>
+  <ul>
+    <li>Manually created users and groups by editing system config files</li>
+    <li>Configured login environments and access permissions</li>
+  </ul>
+</div>
+
+   <!-- SECTION 2.1 -->
+  <div id="section2-1" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 2.1: Troubleshooting User Accounts
+  </h2>
+
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    Most Linux login issues relate to environment files, locked accounts, or shell misconfigurations.
+  </p>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <p>
+    The <code>baker</code> user can’t log in. You must find the issue and fix it.
+  </p>
+
+  <h3>✅ Tasks</h3>
+  <div class="subtask">1. Delete .bash* files from /home/baker and redirect output of 'ls -al /home/baker' to /tmp/project25/user_trouble.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Execute 'bash' command while logged in as baker (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Switch to root and lock baker in /etc/passwd by placing * in the 2nd field, then grep 'baker' and redirect output to /tmp/project25/user_trouble.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Try switching to baker again (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Restore .bash* files from /etc/skel <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">6. Unlock baker in /etc/passwd <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">7. Confirm that login works <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Use <code>su - baker</code> to simulate a full login shell</li>
+    <li>Permissions should be <code>700</code> on the home directory</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You now know how to diagnose and fix broken or locked Linux user accounts</li>
+  </ul>
+
+  <h3>📝 Resume Bullets</h3>
+  <ul>
+    <li>Resolved login failures by restoring user environment and correcting permissions</li>
+    <li>Diagnosed account lockouts and repaired system-level authentication settings</li>
+  </ul>
+</div>
 
     <!-- SECTION 2.2 -->
-    <div id="section2-2" class="task">
-      <h3>🧩 Section 2.2: User Migration Mini Project</h3>
+  <div id="section2-2" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 2.2: User Migration Mini Project
+  </h2>
+
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    Move users from one server to another by backing up and restoring core identity and home directory files.
+  </p>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <p>
+    You are asked to migrate all users and home data from LINOOP server to your new VM.
+  </p>
+ <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Migrate users & home data from LINOOP to your VM.</p>
-      <div class="subtask">1. Identify files storing user info, groups, passwords, home data <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Check /home size on LINOOP & free space on VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Create .tar.gz of /home, /etc/passwd, /etc/group, /etc/shadow <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Transfer archive via scp <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Backup existing config files <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Extract & copy over migrated files <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Compare file sizes (before/after) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Switch to migrated user & verify login <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-    </div>
+      <div class="subtask">1. Identify files storing user account info, passwords, groups, and home data; save absolute paths to /tmp/project25/vm_info.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Check /home/$USER size on linoop.ddns.net using 'du -sh' and append output to /tmp/project25/vm_info.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. On linoop.ddns.net, create data.tar.gz archive containing vm_info.txt, /home/$USER, /etc/passwd, /etc/group, /etc/shadow <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Transfer data.tar.gz from linoop.ddns.net to your VM /tmp directory via scp <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Extract the migrated files in /tmp directory <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">6. Backup existing /home/$USER, /etc/passwd, /etc/group, /etc/shadow files on your VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">7. Compare original and migrated file sizes <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">8. Switch to a migrated user and verify login <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+    <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Always backup system files first</li>
+    <li>Use <code>diff</code> or <code>cmp</code> to compare before/after</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You've performed a user migration using system-level tools and secure archiving</li>
+  </ul>
+
+  <h3>📝 Resume Bullets</h3>
+  <ul>
+    <li>Migrated users and home directories between Linux servers using tar and scp</li>
+    <li>Preserved system integrity by managing UID/GID mappings and secure backups</li>
+  </ul>
+  </div>
 
     <!-- SECTION 3 -->
     <div id="section3" class="task">
-      <h3>🧩 Section 3: SSH Login & Authentication Logs</h3>
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 3: SSH Login & Authentication Logs
+  </h2>
+
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    SSH (Secure Shell) is the default method for accessing Linux systems remotely. This section teaches you how to initiate SSH, review logs, and troubleshoot failed logins.
+  </p>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <blockquote>
+    “Hey, I can’t SSH into the server anymore. It just hangs or says access denied.”
+  </blockquote>
+
+  <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Developer reports failed SSH login. Investigate.</p>
-      <div class="subtask">1. SSH into VM as baker and observe behavior <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Locate log file recording SSH attempts <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Search logs for baker or sshd entries <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Identify cause: wrong password, lockout, service? <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Save summary to /project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-    </div>
+      <div class="subtask">1. SSH from linoop.ddns.net (10.1.10.100) server to your VM using the baker account (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Log in locally to your VM and locate the log file that records SSH login attempts <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Search for entries related to baker or sshd and redirect output to /tmp/project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Determine if logs indicate incorrect password, account locked, or service not running; echo answer in /tmp/project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Write a short note summarizing your findings and save it to /tmp/project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>RHEL: <code>/var/log/secure</code></li>
+    <li>Debian: <code>/var/log/auth.log</code></li>
+    <li>Use <code>ssh -v</code> for verbose output</li>
+    <li>Use <code>journalctl -u sshd</code> to read service logs</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You understand how to test SSH connectivity</li>
+    <li>You can read and interpret authentication logs</li>
+    <li>You know where to look when SSH fails silently</li>
+  </ul>
+
+  <h3>📝 Resume Bullets</h3>
+  <ul>
+    <li>Diagnosed and resolved SSH login failures using Linux authentication logs</li>
+    <li>Analyzed <code>/var/log/secure</code> and <code>journalctl</code> to troubleshoot remote access issues</li>
+    <li>Ensured secure and stable SSH login access for Linux servers</li>
+  </ul>
+  </div>
 
     <!-- SECTION 3.1 -->
     <div id="section3-1" class="task">
-      <h3>🧩 Section 3.1: SSH Key-Based Authentication</h3>
-      <p><b>Scenario:</b> Setup passwordless SSH login using keys.</p>
-      <div class="subtask">1. Check for .ssh directory and existing keys <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. If exists, remove it to start fresh <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Generate new RSA key pair <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Copy public key to LINOOP server <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Test SSH without password prompt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-    </div>
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+      🧩 Section 3.1: SSH Key-Based Authentication
+    </h2>
+
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    Passwords are slow and insecure. In professional environments, SSH keys are used instead — for secure, fast, passwordless login between systems.
+    This section teaches you how to:
+  </p>
+  <ul>
+    <li>Generate an SSH key pair</li>
+    <li>Deploy it to another server (LINOOP)</li>
+ <li>Log in securely without typing a password</li>
+  </ul>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <p>
+    Your manager says:
+    <blockquote>“We’re disabling password-based SSH. You need to switch to key-based authentication for accessing the LINOOP server.”</blockquote>
+    You’re expected to create your key pair and deploy it securely to the remote server — then confirm it works.
+  </p>
+
+     <h3>✅ Tasks</h3>
+     <p><b>Scenario:</b> Setup passwordless SSH login using keys.</p>
+     <div class="subtask">1. Check if your VM has a .ssh directory and key pair; redirect output to /tmp/project25/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. If .ssh directory exists, remove it; execute 'echo $?' and redirect output to /tmp/project25/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Generate a new RSA key pair <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Copy the public key to linoop.ddns.net (10.1.10.100) under your user account home directory <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Test SSH login to linoop.ddns.net (10.1.10.100) without being prompted for a password <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+     <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Use verbose SSH (<code>ssh -v</code>) if unsure why the key isn't working</li>
+    <li>Permissions: <code>~/.ssh</code> → 700, <code>authorized_keys</code> → 600</li>
+    <li>Use <code>ssh-copy-id</code> or <code>scp + cat</code> to move the key</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You know how to use cryptographic keys for authentication</li>
+    <li>SSH keys are essential for DevOps, scripting, and security compliance</li>
+    <li>You practiced secure key generation, deployment, and troubleshooting</li>
+  </ul>
+
+  <h3>📝 Resume Bullet Points</h3>
+  <ul>
+    <li>Configured passwordless SSH access using RSA key pair authentication</li>
+    <li>Implemented secure access policies between Linux systems using authorized keys</li>
+    <li>Demonstrated expertise in key management and SSH access hardening</li>
+  </ul>
+</div>
 
     <!-- SECTION 4 -->
     <div id="section4" class="task">
-      <h3>🧩 Section 4: Patching, Updates & YUM</h3>
-      <p><b>Scenario:</b> Apply both security-only and full updates.</p>
-      <div class="subtask">1. Check /boot space <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Record current kernel version <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. List mounted file systems <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Check total disk usage <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. List running services <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Check security-only YUM updates <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Apply security updates, log to ~/security-patches <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Apply full system updates <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">9. Reboot & check kernel version again <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">10. Confirm critical services running post-update <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 4: Patching, Updates & YUM Package Management
+  </h2>
+
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    Keeping Linux systems up to date is critical for security, compliance, and stability. This section teaches how to:
+  </p>
+  <ul>
+    <li>Perform pre-patching health checks</li>
+    <li>Apply security-only or full updates</li>
+    <li>Use YUM to manage packages</li>
+    <li>Validate system health after patching</li>
+  </ul>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <p>
+    Security notifies you:
+    <blockquote>“A vulnerability scan flagged your VM. Apply the latest security patches now.”</blockquote>
+    You patch only the necessary packages. Later, your team asks you to do a full update and make sure the system reboots cleanly.
+  </p>
+
+  <h2>✅ Tasks</h2>
+  <h3>🔧 Pre-Patching Checklist</h3>
+      <div class="subtask">1. Check available space under '/boot' and redirect output to /tmp/project25/pre-patching.txt file <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Record your current kernel version and append output to /tmp/project25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. List mounted file systems and append output to /tmp/project25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Check total disk space usage append output to /tmp/project25/pre-patching.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. List all currently running services append output to /tmp/project25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🔐 Apply Security Patches</h3>
+      <div class="subtask">6. Check for security-only updates using YUM and redirect to /tmp/project25/patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Apply security updates only. Now again Check for security-only updates and append info in /tmp/project25/patch2.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Redirect updated packages to '/tmp/project25/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🔄 Full System Update</h3>
+      <div class="subtask">9. Check for all available software updates.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">10. Apply full system updates (non-security included) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
     </div>
+
+    <!-- SECTION 4.1 -->
+    <div id="section4-1" class="task">
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+        ✅  Section 4:.1: Post-Patching Checks
+    </h2>
+
+    <h2>✅ Tasks</h2>
+<h3>🔧 Post-patch Checklist</h3>
+
+    <div class="subtask">11. Verify system rebooted; execute 'who -b' and append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">12. Check disk usage under /boot; append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">13. Check current kernel version; append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">14. Compare kernel version before vs after update <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">15. Confirm critical service (e.g., httpd) is running and listening; append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+    <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Security updates can be listed with YUM plugins or flags</li>
+    <li>Kernel updates often require a reboot</li>
+    <li>Use <code>systemctl</code> to check if services are enabled and active</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You safely applied patches using YUM</li>
+    <li>You know the difference between security-only and full updates</li>
+    <li>You validated system health before and after patching</li>
+  </ul>
+
+  <h3>📝 Resume Bullet Points</h3>
+  <ul>
+    <li>Applied security and full updates using YUM with verification steps</li>
+    <li>Recorded kernel and system metrics before and after patching</li>
+    <li>Ensured uptime by validating service continuity post-update</li>
+  </ul>
+</div>
+
 
     <!-- SECTION 5 -->
     <div id="section5" class="task">
-      <h3>🧩 Section 5: Web Server Setup & HTML Deployment</h3>
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+      🧩 Section 5: Web Server Setup & Custom HTML Deployment
+    </h2>
+
+    <h3>📘 What This Section Teaches</h3>
+    <p>
+    Apache (<code>httpd</code>) is one of the most widely used web servers in the world. This section teaches you how to:
+    </p>
+    <ul>
+    <li>Install and manage the Apache service</li>
+    <li>Configure firewalls and SELinux for web traffic</li>
+    <li>Deploy a custom HTML site to a real web server</li>
+    </ul>
+
+    <h3>🏢 Real-World Scenario</h3>
+    <p>
+    Your team needs a status dashboard published. You’re tasked with:
+    <blockquote>“Set up Apache on your VM and deploy an internal LINOOP dashboard page.”</blockquote>
+    You’ll configure Apache, allow web traffic, and publish custom content.
+    </p>
+
+    <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Deploy Apache and serve custom HTML.</p>
-      <div class="subtask">1. Check if httpd installed <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Enable & start httpd service <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Confirm listening on port 80 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Allow HTTP firewall traffic <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Temporarily disable SELinux <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Test web server in browser <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Replace index.html with custom page <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Reload browser & confirm content <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-    </div>
+      <div class="subtask">1. Check if httpd is installed; if not, install using yum <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Enable and start the httpd service <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Confirm Apache is listening on port 80 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Allow HTTP traffic through the firewall <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Set SELinux to permissive mode (initial testing) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Replace /var/www/html/index.html with "wow amazing I am enjoying this test!!!" <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Reload browser and confirm custom content is visible <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Default document root: <code>/var/www/html</code></li>
+    <li>Use <code>systemctl status httpd</code> to check service health</li>
+    <li>Run <code>firewall-cmd --list-all</code> to verify allowed services</li>
+    <li>Use <code>setenforce 0</code> to set SELinux in permissive mode</li>
+    <li>Use <code>getenforce</code> to check SELinux status</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You deployed and verified a working web server</li>
+    <li>You configured firewall rules and SELinux for HTTP</li>
+    <li>You served a custom HTML page from the correct document root</li>
+  </ul>
+
+  <h3>📝 Resume Bullet Points</h3>
+  <ul>
+    <li>Deployed Apache web server and hosted custom web content</li>
+    <li>Configured system firewall and SELinux for secure web access</li>
+    <li>Managed <code>httpd</code> lifecycle using systemd and tested external access</li>
+  </ul>
+  </div>
 
     <!-- SECTION 6 -->
     <div id="section6" class="task">
-      <h3>🧩 Section 6: Network Troubleshooting & Diagnostics</h3>
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 6: Network Troubleshooting & Diagnostics
+  </h2>
+
+  <h3>📘 What This Section Teaches</h3>
+  <p>
+    Network troubleshooting is a critical real-world skill. This section helps you learn how to:
+  </p>
+  <ul>
+    <li>Inspect and configure interfaces</li>
+    <li>Test connectivity</li>
+    <li>Diagnose DNS failures</li>
+    <li>Use traceroute to isolate network issues</li>
+  </ul>
+
+  <h3>🏢 Real-World Scenario</h3>
+  <p>
+    You receive a ticket:
+    <blockquote>“Host unreachable — can’t ping or SSH. Please resolve.”</blockquote>
+    You access the VM from the vSphere console and begin troubleshooting.
+  </p>
+
+      <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Ticket: "Host unreachable — diagnose & resolve".</p>
-      <div class="subtask">1. List interfaces using 2–3 commands <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Check ens192 connectivity to switch <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Show IP/subnet/gateway for ens192 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Ping system default gateway <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Ping external IP (8.8.8.8) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Resolve DNS names (google.com, vc8.linoop.local) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Identify file for manual hostname mapping <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Use traceroute to cnn.com <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">9. Add 2nd NIC in vCenter & activate in VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">10. Get new IP, test connectivity via 2nd NIC <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-    </div>
+      <div class="subtask">1. List all network interfaces using 2–3 commands; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Check if ens192 is connected to a virtual switch; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Check IP settings for ens192 (IP, subnet mask, default gateway); append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Ping default gateway; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Ping external IP (e.g., 8.8.8.8); append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Resolve DNS names (e.g., google.com, vc8.linoop.local); append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. If DNS fails, identify file for manual IP-hostname mapping; append absolute path to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Use traceroute to check hops to cnn.com; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. In vCenter, add a second network adapter to VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">10. Activate new interface and configure DHCP; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">11. Identify new IP and test connectivity from second interface <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <h3>💡 Hints & Tips</h3>
+  <ul>
+    <li>Use <code>ip a</code>, <code>nmcli dev show</code>, or <code>ifconfig</code></li>
+    <li>DNS settings are in <code>/etc/resolv.conf</code></li>
+    <li>Static hostname mappings are defined in <code>/etc/hosts</code></li>
+    <li>New NICs may appear as <code>ens224</code>, <code>eth1</code>, etc.</li>
+    <li>Use <code>nmcli</code> or <code>nmtui</code> to activate and request a DHCP lease</li>
+  </ul>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>You diagnosed link-level, gateway, internet, and DNS issues</li>
+    <li>You configured and tested a new interface from vSphere to OS</li>
+    <li>You used tools that real sysadmins rely on for production support</li>
+  </ul>
+
+  <h3>📝 Resume Bullet Points</h3>
+  <ul>
+    <li>Troubleshot Linux server connectivity using interface and route analysis</li>
+    <li>Configured network interfaces and DNS in virtualized environments</li>
+    <li>Diagnosed and resolved real-world network path and DNS issues using traceroute</li>
+  </ul>
+  </div>
 
   </div>
  <script>
