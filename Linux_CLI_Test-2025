@@ -106,7 +106,7 @@
     <button class="tab-button" onclick="showTab('section2-2', this)">2.2 Troubleshooting User Accounts</button>
     <button class="tab-button" onclick="showTab('section3', this)">3. SSH Login & Authentication logs</button>
     <button class="tab-button" onclick="showTab('section3-1', this)">3.1 SSH Key Based Authentication</button>
-    <button class="tab-button" onclick="showTab('section4', this)">4. Patching & YUM</button>
+    <button class="tab-button" onclick="showTab('section4', this)">4. Patching & YUM Package Management</button>
     <button class="tab-button" onclick="showTab('section4-1', this)">4.1 Post-Patching</button>
     <button class="tab-button" onclick="showTab('section5', this)">5. Web Server Setup</button>
     <button class="tab-button" onclick="showTab('section6', this)">6. Network Troubleshooting</button>
