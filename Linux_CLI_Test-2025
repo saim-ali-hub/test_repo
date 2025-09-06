@@ -196,15 +196,15 @@
   </p>
 
   <h3>✅ Tasks</h3>
-  <div class="subtask">1. Use sudo to take Backup `/etc/passwd` to `/tmp/project25/passwd.org-09-06-25`<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">1. Use sudo to take Backup `/etc/passwd` to `/tmp/linux_cli_test/passwd.org-09-06-25`<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">2. Manually add the 'baker' user entry to '/etc/passwd'.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">3. Use sudo to take Backup `/etc/group` to `/tmp/project25/group.org-09-06-25`. Add `baker` group entry in /etc/group file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">3. Use sudo to take Backup `/etc/group` to `/tmp/linux_cli_test/group.org-09-06-25`. Add `baker` group entry in /etc/group file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">4. Create '/home/baker' and set permissions 700. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">5. Copy '.*' files from /etc/skel to '/home/baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">6. Change ownership of '/home/baker' to 'baker:baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">7. Set a password 'Linux@linoop' for 'baker' user <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">8. Switch to 'baker' with su - baker command <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">9. Check UID, GID, and groups for baker with single command and store inside /tmp/project25/user_trouble.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">8. Switch to 'baker' with su - baker command. execute command pwd and redirect output to /tmp/baker_home.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">9. Check UID, GID, and groups for baker with single command and store inside /tmp/linux_cli_test/user_trouble.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">10. Add 'baker' to the wheel group <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
  <h3>💡 Hints & Tips</h3>
   <ul>
@@ -241,13 +241,13 @@
   </p>
 
   <h3>✅ Tasks</h3>
-  <div class="subtask">1. Delete .bash* files from /home/baker and redirect output of 'ls -al /home/baker' to /tmp/project25/user_trouble.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">1. Delete `.bash*` files from `/home/baker`. Execute a command 'ls -al /home/baker' and redirect output in /tmp/linux_cli_test/user_trouble.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">2. Execute 'bash' command while logged in as baker (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">3. Switch to root and lock baker in /etc/passwd by placing * in the 2nd field, then grep 'baker' and redirect output to /tmp/project25/user_trouble.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Switch to root and lock baker in /etc/passwd by placing * in the 2nd field, then grep 'baker' and redirect output to /tmp/linux_cli_test/user_trouble.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">4. Try switching to baker again (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">5. Restore .bash* files from /etc/skel <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">6. Unlock baker in /etc/passwd <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">7. Confirm that login works <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">6. Unlock `baker` by removing `*` from `/etc/passwd` <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">7. Confirm that login works. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>💡 Hints & Tips</h3>
   <ul>
@@ -286,10 +286,10 @@
   <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Developer reports failed SSH login. Investigate.</p>
       <div class="subtask">1. SSH from linoop.ddns.net (10.1.10.100) server to your VM using the baker account (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">2. Log in locally to your VM and locate the log file that records SSH login attempts <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">3. Search for entries related to baker or sshd and redirect output to /tmp/project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">4. Determine if logs indicate incorrect password, account locked, or service not running; echo answer in /tmp/project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">5. Write a short note summarizing your findings and save it to /tmp/project25/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Log in locally to your VM and locate the log file that records SSH login attempts.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Search for entries related to baker or sshd and redirect output to /tmp/linux_cli_test/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Determine if logs indicate incorrect password, account locked, or service not running; echo answer in /tmp/linux_cli_test/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Write a short note summarizing your findings and save it to /tmp/linux_cli_test/ssh-log-analysis.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>💡 Hints & Tips</h3>
   <ul>
@@ -340,8 +340,8 @@
 
      <h3>✅ Tasks</h3>
      <p><b>Scenario:</b> Setup passwordless SSH login using keys.</p>
-     <div class="subtask">1. Check if your VM has a .ssh directory and key pair; redirect output to /tmp/project25/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">2. If .ssh directory exists, remove it; execute 'echo $?' and redirect output to /tmp/project25/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+     <div class="subtask">1. Check if your VM has a .ssh directory and key pair; redirect output to /tmp/linux_cli_test/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. If .ssh directory exists, remove it; execute 'echo $?' and redirect output to /tmp/linux_cli_test/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">3. Generate a new RSA key pair <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">4. Copy the public key to linoop.ddns.net (10.1.10.100) under your user account home directory <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">5. Test SSH login to linoop.ddns.net (10.1.10.100) without being prompted for a password <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
@@ -394,19 +394,19 @@
 
   <h2>✅ Tasks</h2>
   <h3>🔧 Pre-Patching Checklist</h3>
-      <div class="subtask">1. Check available space under '/boot' and redirect output to /tmp/project25/pre-patching.txt file <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Record your current kernel version and append output to /tmp/project25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. List mounted file systems and append output to /tmp/project25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Check total disk space usage append output to /tmp/project25/pre-patching.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. List all currently running services append output to /tmp/project25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">1. Check available space under '/boot' and redirect output to /tmp/linux_cli_test/pre-patching.txt file <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Record your current kernel version and append output to /tmp/linux_cli_test/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. List mounted file systems and append output to /tmp/linux_cli_test/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Check total disk space usage append output to /tmp/linux_cli_test/pre-patching.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. List all currently running services append output to /tmp/linux_cli_test/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🔐 Apply Security Patches</h3>
-      <div class="subtask">6. Check for security-only updates using YUM and redirect to /tmp/project25/patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Apply security updates only. Now again Check for security-only updates and append info in /tmp/project25/patch2.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Redirect updated packages to '/tmp/project25/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Check for security-only updates using YUM and redirect to /tmp/linux_cli_test/patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Apply security updates only. Now again Check for security-only updates and append info in /tmp/linux_cli_test/patch2.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Redirect updated packages to '/tmp/linux_cli_test/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🔄 Full System Update</h3>
-      <div class="subtask">9. Check for all available software updates and store in /tmp/project25/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Check for all available software updates and store in /tmp/linux_cli_test/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">10. Apply full system updates (non-security included) and upon completion of update reboot your machine. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     </div>
@@ -420,11 +420,11 @@
     <h2>✅ Tasks</h2>
 <h3>🔧 Post-patch Checklist</h3>
 
-    <div class="subtask">11. Verify system rebooted; execute 'who -b' and append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">12. Check disk usage under /boot; append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">13. Check current kernel version; append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    <div class="subtask">11. Verify system rebooted; execute 'who -b' and append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">12. Check disk usage under /boot; append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">13. Check current kernel version; append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">14. Compare kernel version before vs after update <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">15. Confirm critical service (e.g., httpd) is running and listening; append output to /tmp/project25/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">15. Confirm critical service (e.g., httpd) is running and listening; append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     <h3>💡 Hints & Tips</h3>
   <ul>
@@ -531,16 +531,16 @@
 
       <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Ticket: "Host unreachable — diagnose & resolve".</p>
-      <div class="subtask">1. List all network interfaces using 2–3 commands; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Check if ens192 is connected to a virtual switch; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Check IP settings for ens192 (IP, subnet mask, default gateway); append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Ping default gateway; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Ping external IP (e.g., 8.8.8.8); append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Resolve DNS names (e.g., google.com, vc8.linoop.local); append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. If DNS fails, identify file for manual IP-hostname mapping; append absolute path to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Use traceroute to check hops to cnn.com; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">1. List all network interfaces using 2–3 commands; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Check if ens192 is connected to a virtual switch; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Check IP settings for ens192 (IP, subnet mask, default gateway); append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Ping default gateway; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Ping external IP (e.g., 8.8.8.8); append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Resolve DNS names (e.g., google.com, vc8.linoop.local); append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. If DNS fails, identify file for manual IP-hostname mapping; append absolute path to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Use traceroute to check hops to cnn.com; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">9. In vCenter, add a second network adapter to VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">10. Activate new interface and configure DHCP; append output to /tmp/project25/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">10. Activate new interface and configure DHCP; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">11. Identify new IP and test connectivity from second interface <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <h3>💡 Hints & Tips</h3>
   <ul>
