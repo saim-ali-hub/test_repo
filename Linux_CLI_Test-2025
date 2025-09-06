@@ -196,16 +196,16 @@
   </p>
 
   <h3>✅ Tasks</h3>
-  <div class="subtask">1. Use sudo to take Backup `/etc/passwd` to `/tmp/linux_cli_test/passwd.org-09-06-25`<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">1. Switch to root user to take Backup `/etc/passwd` to `/tmp/linux_cli_test/passwd.org-09-06-25`<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">2. Manually add the 'baker' user entry to '/etc/passwd'.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">3. Use sudo to take Backup `/etc/group` to `/tmp/linux_cli_test/group.org-09-06-25`. Add `baker` group entry in /etc/group file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">3. Take Backup `/etc/group` to `/tmp/linux_cli_test/group.org-09-06-25`. Add `baker` group entry in /etc/group file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">4. Create '/home/baker' and set permissions 700. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">5. Copy '.*' files from /etc/skel to '/home/baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">6. Change ownership of '/home/baker' to 'baker:baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">7. Set a password 'Linux@linoop' for 'baker' user <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">8. Switch to 'baker' with su - baker command. execute command pwd and redirect output to /tmp/baker_home.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">9. Check UID, GID, and groups for baker with single command and store inside /tmp/linux_cli_test/user_trouble.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">10. Add 'baker' to the wheel group <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">8. Switch to `baker` with `su - baker` command. Create a directory /tmp/baker_dir. Now execute command pwd and redirect output to /tmp/baker_home.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">9. Verify the UID, GID, and group memberships of the baker user by running the id baker command. Append the output to the file /tmp/baker_dir/baker_id.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">10. Log out from the baker account and switch back to the root user. Add baker to the wheel group, then run id baker again to confirm. Redirect the output to /tmp/baker_dir/baker_groups.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
  <h3>💡 Hints & Tips</h3>
   <ul>
     <li>Use <code>:</code> as the field separator in <code>/etc/passwd</code></li>
@@ -241,13 +241,14 @@
   </p>
 
   <h3>✅ Tasks</h3>
-  <div class="subtask">1. Delete `.bash*` files from `/home/baker`. Execute a command 'ls -al /home/baker' and redirect output in /tmp/linux_cli_test/user_trouble.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">2. Execute 'bash' command while logged in as baker (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">3. Switch to root and lock baker in /etc/passwd by placing * in the 2nd field, then grep 'baker' and redirect output to /tmp/linux_cli_test/user_trouble.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">4. Try switching to baker again (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">5. Restore .bash* files from /etc/skel <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">6. Unlock `baker` by removing `*` from `/etc/passwd` <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">7. Confirm that login works. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">1. As the root user, delete all .bash* files from /home/baker. Then run ls -al /home/baker and append the output to /tmp/baker_dir/baker_env1.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Switch to the baker user and verify whether you are able to obtain the shell prompt successfully. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Restore the .bash* files for baker from /etc/skel. Then run ls -al /home/baker and append the output to /tmp/baker_dir/baker_env2. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Run the bash command and verify that the shell prompt is displayed again. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Switch to the root user. Using the vim editor, lock the baker account by placing * in the second field of the user’s entry in /etc/passwd. Save and exit. Then, grep 'baker' from /etc/passwd file and redirect the output to /tmp/baker_dir/baker_trouble.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">6. Attempt to switch to the baker user again and observe the behavior.<span class="buttons"><button>Done</button><button>Revisit</button></span></div> 
+<div class="subtask">7. Unlock the baker account by removing the * from the second field in /etc/passwd.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">8. Attempt to switch to the baker user again and observe the behavior.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>💡 Hints & Tips</h3>
   <ul>
