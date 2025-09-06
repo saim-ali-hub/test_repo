@@ -241,19 +241,20 @@
   </p>
 
   <h3>✅ Tasks</h3>
-  <div class="subtask">1. As the root user, delete all .bash* files from /home/baker. Then run ls -al /home/baker and append the output to /tmp/baker_dir/baker_env1.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">1. As the root user, delete all .bash* files from /home/baker. Then run ls -al /home/baker and append the output to /tmp/baker_dir/baker_env1.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">2. Switch to the baker user and verify whether you are able to obtain the shell prompt successfully. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">3. Restore the .bash* files for baker from /etc/skel. Then run ls -al /home/baker and append the output to /tmp/baker_dir/baker_env2. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">4. Run the bash command and verify that the shell prompt is displayed again. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">5. Switch to the root user. Using the vim editor, lock the baker account by placing * in the second field of the user’s entry in /etc/passwd. Save and exit. Then, grep 'baker' from /etc/passwd file and redirect the output to /tmp/baker_dir/baker_trouble.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">6. Attempt to switch to the baker user again and observe the behavior.<span class="buttons"><button>Done</button><button>Revisit</button></span></div> 
-<div class="subtask">7. Unlock the baker account by removing the * from the second field in /etc/passwd.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">8. Attempt to switch to the baker user again and observe the behavior.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Switch to the root user. Using the vim editor, lock the baker account by placing * in the second field of the user’s entry in /etc/passwd. Save and exit. Then, grep 'baker' from /etc/passwd file and append the output to /tmp/baker_dir/trouble.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">6. Attempt to ssh to the baker user "ssh baker@localhost" and observe any errors. Check system logs to investigate the SSH issue "tail /var/log/secure". Then record the relevant log enteries using "tail /var/log/secure > /tmp/baker/logs_ssh_locked" command.<span class="buttons"><button>Done</button><button>Revisit</button></span></div> 
+<div class="subtask">7. Unlock the baker account by replacing the * with x in the second field of etc/passwd. Then grep baker from /etc/passwd and append output in /tmp/baker_dir/trouble_fixed.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">8. Attempt to ssh to the baker user "ssh baker@localhost". Check system logs to investigate the SSH issue "tail /var/log/secure". Then record the relevant log enteries using "tail /var/log/secure > /tmp/baker/logs_ssh_unlocked" command.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>💡 Hints & Tips</h3>
   <ul>
     <li>Use <code>su - baker</code> to simulate a full login shell</li>
     <li>Permissions should be <code>700</code> on the home directory</li>
+    <li>Any issues related to password authentication, account locking and ssh are logged by the system in security logs in OEL/RHEL relevant file is /var/log/secure.</li>
   </ul>
 
   <h3>🧠 Summary</h3>
@@ -286,11 +287,10 @@
 
   <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Developer reports failed SSH login. Investigate.</p>
-      <div class="subtask">1. SSH from linoop.ddns.net (10.1.10.100) server to your VM using the baker account (observe behavior) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">2. Log in locally to your VM and locate the log file that records SSH login attempts.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">3. Search for entries related to baker or sshd and redirect output to /tmp/linux_cli_test/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">4. Determine if logs indicate incorrect password, account locked, or service not running; echo answer in /tmp/linux_cli_test/ssh-log-analysis.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">5. Write a short note summarizing your findings and save it to /tmp/linux_cli_test/ssh-log-analysis.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">1. SSH from linoop.ddns.net (10.1.10.100) server to your VM using the baker account. Hopefully successfully login. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Switch to the root user on your VM and investigate the login activity for baker. Search /var/log/secure for entries related to baker or sshd, then use the tail command on the results and redirect the output to /tmp/baker_dir/logs_baker_linoop.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Do logs indicate incorrect password, account locked, or Accepted password for baker. Append your response in /tmp/baker_dir/ssh-log-analysis.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Append a short note summarizing your findings and save it to '/tmp/baker_dir/ssh-log-analysis.txt'<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>💡 Hints & Tips</h3>
   <ul>
