@@ -422,11 +422,11 @@
     <h2>✅ Tasks</h2>
 <h3>🔧 Post-patch Checklist</h3>
 
- <div class="subtask">11. Verify that the system rebooted successfully by checking the last boot time with the who -b command. Append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">12. Check the current disk usage of the /boot filesystem and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">13. Check the current kernel version and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">14. Compare the kernel version recorded before patching with the one after the update to confirm whether a new kernel has been applied. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">15. Confirm that a critical service (for example, httpd) is running and listening, and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+ <div class="subtask">12. Verify that the system rebooted successfully by checking the last boot time with the who -b command. Append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">13. Check the current disk usage of the /boot filesystem and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">14. Check the current kernel version and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">15. Compare the kernel version recorded before patching with the one after the update to confirm whether a new kernel has been applied. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">16. Confirm that a critical service (for example, httpd) is running and listening, and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     <h3>💡 Hints & Tips</h3>
   <ul>
