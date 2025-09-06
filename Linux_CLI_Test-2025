@@ -395,20 +395,21 @@
 
   <h2>✅ Tasks</h2>
   <h3>🔧 Pre-Patching Checklist</h3>
-      <div class="subtask">1. Check available space under '/boot' and redirect output to /tmp/linux_cli_test/pre-patching.txt file <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Record your current kernel version and append output to /tmp/linux_cli_test/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. List mounted file systems and append output to /tmp/linux_cli_test/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Check total disk space usage append output to /tmp/linux_cli_test/pre-patching.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. List all currently running services append output to /tmp/linux_cli_test/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">1. Switch to your user in your VM (firsname_lastname). Create a directory /tmp/data25. Now Check available space under `/boot` using df -h command and redirect output to /tmp/data25/pre-patching.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Record your current kernel version and append output to /tmp/data25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. List mounted file systems and append output to /tmp/data25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Check total disk space usage append output to /tmp/data25/pre-patching.txt file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. List all currently running services append output to /tmp/data25/pre-patching.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🔐 Apply Security Patches</h3>
-      <div class="subtask">6. Check for security-only updates using YUM and redirect to /tmp/linux_cli_test/patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Apply security updates only. Now again Check for security-only updates and append info in /tmp/linux_cli_test/patch2.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Redirect updated packages to '/tmp/linux_cli_test/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Check for security-only updates using YUM and redirect the result to '/tmp/data25/patch.txt' file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Apply security updates and log the update process in '/tmp/data25/security-update.log' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Check again for remaining security updates and append results in '/tmp/data2/patch2.txt' file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Save a list of updated security packages to '/tmp/linux_cli_test/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🔄 Full System Update</h3>
-      <div class="subtask">9. Check for all available software updates and store in /tmp/linux_cli_test/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">10. Apply full system updates (non-security included) and upon completion of update reboot your machine. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">10. Check for all available software updates and store in /tmp/data2/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">11. pply full system updates (non-security included) and add output inside a file /tmp/data25/full-system-update.log <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     </div>
 
