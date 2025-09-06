@@ -405,10 +405,10 @@
       <div class="subtask">6. Check for security-only updates using YUM and redirect the result to '/tmp/data25/patch.txt' file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">7. Apply security updates and log the update process in '/tmp/data25/security-update.log' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">8. Check again for remaining security updates and append results in '/tmp/data2/patch2.txt' file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">9. Save a list of updated security packages to '/tmp/linux_cli_test/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Save a list of updated security packages to '/tmp/data25/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🔄 Full System Update</h3>
-      <div class="subtask">10. Check for all available software updates and store in /tmp/data2/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">10. Check for all available software updates and store in /tmp/data25/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">11. pply full system updates (non-security included) and add output inside a file /tmp/data25/full-system-update.log <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     </div>
@@ -422,11 +422,11 @@
     <h2>✅ Tasks</h2>
 <h3>🔧 Post-patch Checklist</h3>
 
-    <div class="subtask">11. Verify system rebooted; execute 'who -b' and append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">12. Check disk usage under /boot; append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">13. Check current kernel version; append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">14. Compare kernel version before vs after update <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">15. Confirm critical service (e.g., httpd) is running and listening; append output to /tmp/linux_cli_test/post-patching.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+ <div class="subtask">11. Verify that the system rebooted successfully by checking the last boot time with the who -b command. Append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">12. Check the current disk usage of the /boot filesystem and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">13. Check the current kernel version and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">14. Compare the kernel version recorded before patching with the one after the update to confirm whether a new kernel has been applied. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">15. Confirm that a critical service (for example, httpd) is running and listening, and append the output to /tmp/data25/post-patching.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     <h3>💡 Hints & Tips</h3>
   <ul>
@@ -476,13 +476,14 @@
 
     <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Deploy Apache and serve custom HTML.</p>
-      <div class="subtask">1. Check if httpd is installed; if not, install using yum <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Enable and start the httpd service <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Confirm Apache is listening on port 80 <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Allow HTTP traffic through the firewall <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Set SELinux to permissive mode (initial testing) <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Replace /var/www/html/index.html with "wow amazing I am enjoying this test!!!" <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. Reload browser and confirm custom content is visible <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">1. Verify whether the httpd package is installed. If not, install it using YUM. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Enable the httpd service to start at boot, and start the service immediately. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Confirm that Apache (httpd) is actively listening on port 80. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Update the firewall configuration to allow inbound HTTP traffic. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Set SELinux to permissive mode temporarily for initial testing. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Replace the contents of /var/www/html/index.html with "wow amazing I am enjoying this test!!!" <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. Reload the web browser and verify that the custom content is displayed. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
 <h3>💡 Hints & Tips</h3>
   <ul>
     <li>Default document root: <code>/var/www/html</code></li>
@@ -533,17 +534,18 @@
 
       <h3>✅ Tasks</h3>
       <p><b>Scenario:</b> Ticket: "Host unreachable — diagnose & resolve".</p>
-      <div class="subtask">1. List all network interfaces using 2–3 commands; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">2. Check if ens192 is connected to a virtual switch; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">3. Check IP settings for ens192 (IP, subnet mask, default gateway); append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">4. Ping default gateway; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">5. Ping external IP (e.g., 8.8.8.8); append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">6. Resolve DNS names (e.g., google.com, vc8.linoop.local); append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">7. If DNS fails, identify file for manual IP-hostname mapping; append absolute path to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Use traceroute to check hops to cnn.com; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">9. In vCenter, add a second network adapter to VM <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">10. Activate new interface and configure DHCP; append output to /tmp/linux_cli_test/networking <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">11. Identify new IP and test connectivity from second interface <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">1. List all network interfaces using 2–3 different commands and append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">2. Check if `ens192` is connected to a virtual switch and append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">3. Check IP settings for `ens192` (IP, subnet mask, default gateway) and append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">4. Ping the system’s default gateway — is it reachable?. Append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">5. Ping an external IP address (e.g., `8.8.8.8`) and append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">6. Try resolving DNS names like `google.com` and `vc8.linoop.local` and append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">7. If DNS fails, what file could you use to define IP-hostname mappings manually? append absolute path to /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Use traceroute to see how many hops it takes to reach `cnn.com` and append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">9. Go to vCenter, edit your VM settings, and add a second network adapter. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">10. Back in your VM, activate the new interface and configure it to use DHCP. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">11. Identify the new IP assigned and test connectivity from the second interface. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
   <h3>💡 Hints & Tips</h3>
   <ul>
     <li>Use <code>ip a</code>, <code>nmcli dev show</code>, or <code>ifconfig</code></li>
