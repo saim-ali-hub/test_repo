@@ -197,7 +197,7 @@
   <h3>✅ Tasks</h3>
   <div class="subtask">1. Switch to root user or use sudo privilege and take Backup '/etc/passwd' to '/tmp/project25/passwd.org-8-30-25'<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">2. Manually add the 'baker' user entry to '/etc/passwd'.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">3. Backup '/etc/group' to '/tmp/project25/group.org.8-30-25'. Add 'baker' group entry /etc/group. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">3. Backup '/etc/group' to '/tmp/project25/group.org-8-30-25'. Add 'baker' group entry /etc/group. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">4. Create '/home/baker' and set permissions 700. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">5. Copy '.*' files from /etc/skel to '/home/baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">6. Change ownership of '/home/baker' to 'baker:baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
