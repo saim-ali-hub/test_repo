@@ -161,6 +161,7 @@
   <ul>
     <li>Always backup system files first</li>
     <li>When you execute the command "sudo /usr/local/bin/backup_user.sh" the script internally runs "tar -cvzf data.tar.gz /home/$USER /etc/passwd /etc/group /etc/shadow" As a result, a compressed archive named data.tar.gz is created. Although you are a regular user, using sudo temporarily elevates your privileges, allowing you to include system files such as /etc/shadow in the archive, which would otherwise be inaccessible.</li>
+    <li>* After replacement of home directory and files if ask for authentication you will use password "Linoop@123!!"</li>
   </ul>
 
   <h3>🧠 Summary</h3>
