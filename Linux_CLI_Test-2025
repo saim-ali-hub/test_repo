@@ -341,8 +341,8 @@
 
      <h3>✅ Tasks</h3>
      <p><b>Scenario:</b> Setup passwordless SSH login using keys.</p>
-     <div class="subtask">1. Check if your VM has a .ssh directory and key pair; redirect output to /tmp/linux_cli_test/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">2. If .ssh directory exists, remove it; execute 'echo $?' and redirect output to /tmp/linux_cli_test/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+     <div class="subtask">1. On your VM, switch to the migrated user on linoop.ddns.net, create the directory /tmp/linux_test, and check for the existence of the .ssh directory and key pair, redirecting the output to /tmp/linux_test/ssh_file.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. If .ssh directory exists, remove it; execute 'echo $?' and redirect output to /tmp/linux_test/ssh_file.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">3. Generate a new RSA key pair <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">4. Copy the public key to linoop.ddns.net (10.1.10.100) under your user account home directory <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">5. Test SSH login to linoop.ddns.net (10.1.10.100) without being prompted for a password <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
