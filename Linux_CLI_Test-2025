@@ -346,7 +346,7 @@
 <div class="subtask">3. Now while you are migrated user cat ~/.ssh/id_rsa.pub > /tmp/linux_test/public_key. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">4. Copy the newly generated public key to the linoop.ddns.net server (10.1.10.100) under the same user’s home directory. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">5. Verify that you can SSH into linoop.ddns.net (10.1.10.100) as the same user without being prompted for a password. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-</div> 
+
      <h3>💡 Hints & Tips</h3>
   <ul>
     <li>Use verbose SSH (<code>ssh -v</code>) if unsure why the key isn't working</li>
@@ -449,7 +449,6 @@
     <li>Ensured uptime by validating service continuity post-update</li>
   </ul>
 </div>
-
 
     <!-- SECTION 5 -->
     <div id="section5" class="task">
