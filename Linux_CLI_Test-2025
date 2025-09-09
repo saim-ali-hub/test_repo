@@ -542,7 +542,7 @@
       <div class="subtask">7. If DNS fails, what file could you use to define IP-hostname mappings manually? append absolute path to /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">8. Use traceroute to see how many hops it takes to reach `cnn.com` and append output in /tmp/data2/networking. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">9. Go to vCenter, edit your VM settings, and add a second network adapter. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">10. Back in your VM, activate the new interface and configure it to use DHCP. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">10. Back in your VM and check if ip command available if not execute command "yum install -y iproute". Now activate the new interface and configure it to use DHCP. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">11. Identify the new IP assigned and test connectivity from the second interface. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>💡 Hints & Tips</h3>
