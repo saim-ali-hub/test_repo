@@ -203,7 +203,7 @@
   <div class="subtask">5. Copy '.*' files from /etc/skel to '/home/baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">6. Change ownership of '/home/baker' to 'baker:baker' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">7. Set a password 'Linux@linoop' for 'baker' user <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">8. Switch to `baker` with `su - baker` command. Create a directory /tmp/baker_dir. Now execute command pwd and redirect output to /tmp/baker_home.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">8. Switch to `baker` with `su - baker` command. Create a directory /tmp/baker_dir. Now execute command pwd and redirect output to /tmp/baker_dir/baker_home.txt <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">9. Verify the UID, GID, and group memberships of the baker user by running the id baker command. Append the output to the file /tmp/baker_dir/baker_id.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">10. Log out from the baker account and switch back to the root user. Add baker to the wheel group, then run id baker again to confirm. Redirect the output to /tmp/baker_dir/baker_groups.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
  <h3>💡 Hints & Tips</h3>
