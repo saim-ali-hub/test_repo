@@ -404,7 +404,7 @@
   <h3>🔐 Apply Security Patches</h3>
       <div class="subtask">6. Switch to root user then check for security-only updates using YUM and redirect the result to '/tmp/data25/patch.txt' file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">7. Apply security updates and log the update process in '/tmp/data25/security-update.log' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">8. Check again for remaining security updates and append results in '/tmp/data2/patch2.txt' file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">8. Check again for remaining security updates and append results in '/tmp/data25/patch2.txt' file. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">9. Save a list of updated security packages to '/tmp/data25/security-patches' <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🔄 Full System Update</h3>
