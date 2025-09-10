@@ -409,7 +409,7 @@
 
   <h3>🔄 Full System Update</h3>
       <div class="subtask">10. Check for all available software updates and store in /tmp/data25/full_patch.txt file.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-      <div class="subtask">11. pply full system updates (non-security included) and add output inside a file /tmp/data25/full-system-update.log <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">11. Apply full system updates (non-security included) and add output inside a file /tmp/data25/full-system-update.log <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
     </div>
 
