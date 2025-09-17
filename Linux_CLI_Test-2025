@@ -290,8 +290,7 @@
       <div class="subtask">1. SSH from linoop.ddns.net (10.1.10.100) server to your VM using the baker account. Hopefully successfully login. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">2. Switch to the root user on your VM and investigate the login activity for baker. Search /var/log/secure for entries related to baker or sshd, then use the tail command on the results and redirect the output to /tmp/baker_dir/logs_baker_linoop.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">3. Do logs indicate incorrect password, account locked, or Accepted password for baker. Append your response in /tmp/baker_dir/ssh-log-analysis.txt. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class:="subtask">4. Use vim editor and Append a short note summarizing your findings and save it to '/tmp/baker_dir/ssh-log-analysis.txt'. Make sure note should be started with a line "summary of ssh logs:"<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-
+<div class="subtask">4. Use vim editor and Append a short note summarizing your findings and save it to '/tmp/baker_dir/ssh-log-analysis.txt'. Make sure note should be started with a line "summary of ssh logs:"<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <h3>💡 Hints & Tips</h3>
   <ul>
     <li>RHEL: <code>/var/log/secure</code></li>
