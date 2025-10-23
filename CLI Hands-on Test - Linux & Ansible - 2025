@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLI Hands-on Test – Linux & Ansible – 2025</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      width: 280px;
+      background: #2c3e50;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+    }
+    .sidebar h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .tab-button {
+      background: none;
+      border: none;
+      color: white;
+      text-align: left;
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .tab-button:hover, .tab-button.active {
+      background: #34495e;
+    }
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+    }
+    .task {
+      background-color: #add8e6;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 8px;
+      display: none;
+    }
+    .task.active {
+      display: block;
+    }
+    .task h2 {
+     color: #1a5276;
+     font-size: 26px;
+     font-weight: 900;
+     margin-bottom: 15px;
+    }
+    .task h3 {
+     color: #d35400;
+     font-size: 20px;
+     margin-top: 15px;
+     margin-bottom: 10px;
+    }
+    .task h3 {
+      margin-top: 0;
+    }
+    .subtask {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 20px;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+    .subtask span {
+      flex-shrink: 0;
+    }
+    .buttons button {
+      margin-left: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      min-width: 80px;
+    }
+    .done {
+      background-color: #2ecc71;
+      color: white;
+    }
+    .revisit {
+      background-color: #e67e22;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>💻 CLI Hands-on Test – Linux & Ansible – 2025</h2>
+    <button class="tab-button active" onclick="showTab('Overview', this)"> Overview</button>	
+    <button class="tab-button active" onclick="showTab('section1', this)">1. Essential Linux Commands</button>
+    <button class="tab-button" onclick="showTab('section2', this)">2. Searching, Archiving & Text Analysis</button>
+    <button class="tab-button" onclick="showTab('section3', this)">3. Users and Groups Management</button>
+    <button class="tab-button" onclick="showTab('section4', this)">4. Process & Service Management</button>
+    <button class="tab-button" onclick="showTab('section5', this)">5. Networking Management</button>
+    <button class="tab-button" onclick="showTab('section6', this)">6. Security Management</button>
+    <button class="tab-button" onclick="showTab('section7', this)">7. Logs & Troubleshooting</button>
+    <button class="tab-button" onclick="showTab('section8', this)">8. Package Management</button>
+    <button class="tab-button" onclick="showTab('section9', this)">9. Storage Management</button>
+    <button class="tab-button" onclick="showTab('section10', this)">6. DevOps Tools - Ansible</button>
+
+  </div>
+
+  <div class="content">
+
+    <!-- Overview -->
+    <div id="Overview" class="task active">
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+       🧩 Overview
+    </h2>
+
+     <h3> <p><b>The First Week of Alex – The New Linux Administrator </b></p> </h3>
+        <div class="subtask"> Alex, a newly hired Linux Engineer, walks into his first day at fortune one hundered company, a fast-growing DevOps consulting company.</div>
+        <div class="subtask"> Manager John greets him warmly:</div>
+        <div class="subtask"> “Welcome aboard, Alex! You’ll be working under our senior engineer, Chris. He’ll walk you through our RHEL servers and automation setup. We’ve got some hands-on tasks lined up to help you settle in.”</div>
+        
+     <h3> <p><b> Alex smiles, logs into his RHEL workstation, and joins the internal Slack channel — ready to prove himself.</b></p>
+   </div> </h3>
+
+      <!-- SECTION 1 -->
+    <div id="section1" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 1: Essential Linux Commands
+  </h2>
+
+  <h3>🎯 Objective: Get comfortable with your new Linux environment.</h3>
+  <p>
+    Team Lead Chris assigns Alex his first warm-up tasks:
+  </p>
+
+  <h3>🏢 Scenario</h3>
+  <p>
+    “Alex, before touching production nodes, let’s make sure you’re familiar with the system basics. Check what distro we’re on, memory stats, and do some file manipulations.”
+  </p>
+
+ <h3>✅ Tasks</h3>
+      <div class="subtask">1. Find the Linux distribution, version, and kernel release — Chris wants to know what base image the server uses.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">2. Review memory and swap space, ensuring there’s enough for testing.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">3. Display current directory, user, and hostname all at once — quick system awareness.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">4. Create directories /lab1/docs and /lab1/config.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">5. Copy /etc/passwd into /lab1/docs/ and rename it to passwd.bak.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">6. Copy all .conf files from /etc containing “net” in the name to /lab1/config/.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">7. Redirect the output of ls /usr/bin to a file /lab1/output.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">8. Insert the output of uptime into /lab1/info.txt using redirection.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">9. Create a hard link /lab1/docs/hard_passwd pointing to /lab1/docs/passwd.bak.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">10. Create a symbolic link /lab1/docs/sym_info pointing to /lab1/info.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">11. Set permissions on /lab1/docs so that only the owner can read/write, others have no access.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">12. Set the sticky bit on /lab1/configs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>“Think of this as setting up your own workspace,” says Chris.
+“You’ll use /lab1 for your learning sandbox.”
+</li>
+  </ul>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div id="section2" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 2: Searching, Archiving & Text Analysis
+  </h2>
+
+  <h3>🎯 Objective: Learn to locate, archive, and analyze configuration data.</h3>
+  <p>
+    After completing basic setup, Chris sends Alex a message:
+  </p>
+
+  <h3>🏢 Scenario</h3>
+  <p>
+    “We often troubleshoot configuration drift and backup logs. Try searching recent config changes and archiving important data.”
+  </p>
+
+  <h3>✅ Tasks</h3>
+  <div class="subtask">13. Find all files in /etc modified in the last 1 day and store results in /lab1/find_results.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">14. Archive /lab1/docs and /lab1/scripts into /root/lab1_backup.tar.gz. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">15. Extract the archive into /tmp/lab_restore/.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">16. Compress /lab1/info.txt using bzip2.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">17. Compare the checksums of /etc/passwd and /lab1/docs/passwd.bak using md5sum.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">18. Replace the word “root” with “admin” in /lab1/docs/passwd.bak using sed.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">19. Search for all occurrences of the word “nologin” in /etc/passwd using grep. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">20. Search for all lines not containing “bash” using grep -v.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">21. Schedule a cron job for the user student to run date >> /tmp/cron_check.txt every 5 minutes.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>Chris adds, “These are everyday SysAdmin routines — get comfortable with automation and data extraction.”</li>
+  </ul>
+</div>
+
+    <!-- SECTION 3 -->
+    
+  <div id="section3" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 3: Users and Groups Management
+  </h2>
+
+  <h3>Objective: Manage users securely.</h3>
+  <p>
+    User creation, handling login issues relate to environment files, locked accounts, or shell misconfigurations.
+  </p>
+
+  <h3>🏢 Scenario</h3>
+  <p>
+    “We’re onboarding new engineers. Set up a user called devops with correct permissions and policies.”
+  </p>
+
+  <h3>✅ Tasks</h3>
+  <div class="subtask">22. Create a user devops with UID 1501 and home /home/devops.  <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">23. Create a group engineers and add devops to it. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">24. Enforce password expiration to 30 days for user devops.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">25. Lock the account devops to simulate access control during onboarding the account devops to simulate access control during onboarding. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>“Access hygiene is key,” Chris reminds him. “We don’t want stale or insecure accounts lying around.” </li>
+  </ul>
+</div>
+
+    <!-- SECTION 4 -->
+    <div id="section4" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 4: Process & Service Management 
+  </h2>
+
+  <h3>🎯 Objective: Monitor system activity and services.</h3>
+  <p>
+    SSH (Secure Shell) is the default method for accessing Linux systems remotely. This section teaches you how to initiate SSH, review logs, and troubleshoot failed logins.
+  </p>
+
+  <h3>🏢 Scenario</h3>
+  <blockquote>
+   Chris wants Alex to understand resource usage:
+  </blockquote>
+
+  <h3>✅ Tasks</h3>
+      
+      <div class="subtask">26. Display top 5 memory-consuming processes using ps. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">27. Run three process sleep 1000, sleep 2000, sleep 3000. Now kill a process with name sleep if running.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">28. Ensure cron and sshd services are running and enabled on boot. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>“System stability starts with understanding what’s running and why,” Chris explains.</li>
+  </ul>
+  </div>
+
+    <!-- SECTION 5 -->
+    <div id="section5" class="task">
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+      🧩 Section 5: Networking Management
+    </h2>
+
+  <h3>🎯 Objective: Configure and verify network settings.</h3>
+  <p>
+    Chris wants Alex to understand Network configuration, Validate machines are on network:
+  </p> 
+
+  <h3>🏢 Scenario</h3>
+  <p>
+    The next day, Chris calls Alex:
+    <blockquote>“Our QA VM needs proper hostname and connectivity. Make sure it’s reachable and DNS works.”</blockquote>
+  </p>
+
+     <h3>✅ Tasks</h3>
+     <div class="subtask">29. Configure the hostname of VM “myvm.linoop.local” and display. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+     <div class="subtask">30. Check IP address and routing table.  <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+     <div class="subtask">31. Verify network connectivity by pinging google.com and save output to /lab1/ping_log.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+     <div class="subtask">32. Validate if DNS is working fine by resolving “cnn.com”.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>System Admins configure the hostname, verify IP and routes, test connectivity via ping, and confirms DNS functionality using nslookup or dig”</li>
+  </ul>
+</div>
+
+    <!-- SECTION 6 -->
+    <div id="section6" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 6: Security Management 
+  </h2>
+
+  <h3>🎯 Objective: Secure authentication and tune kernel parameters.</h3>
+  <p>
+    Chris calls Alex, regarding security policies and hardening of Linux systems on OS level.
+  </p>
+  
+  <h3>🏢 Scenario</h3>
+  <p>
+    
+    <blockquote>We enforce SSH key-based access for DevOps users. Set that up for devops and adjust some kernel parameters.</blockquote>
+  </p>
+
+  <h2>✅ Tasks</h2>
+      <div class="subtask">33.Generate SSH key pair for user devops (no passphrase). <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">34. Configure passwordless SSH access from devops to srvc user in the same VM. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">35. Allow devops to run all commands as sudo without password. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">36. Temporarily change the kernel parameter vm.swappiness to 40, make it persistent. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>Our team’s focus on enhancing secure automation and system tuning — setting up SSH key-based access, sudo privileges, and kernel parameter optimization for persistent configuration.</li>
+  </ul>
+  </div>
+
+    <!-- SECTION 7 -->
+    <div id="section7" class="task">
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+        ✅  Section 7: Accessing Logs & Troubleshooting
+    </h2>
+<h3>🎯 Objective: Monitor and understand system logs.</h3>
+  <p>
+    Chris sends a troubleshooting scenario to Alex:
+  </p>
+  
+  <h3>🏢 Scenario</h3>
+  <p>
+    
+    <blockquote>“Alex, there’s been a report of login failures. Let’s practice log inspection.”</blockquote>
+  </p>
+
+    <h2>✅ Tasks</h2>
+    <div class="subtask">37. Display last 15 lines of /var/log/messages. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    <div class="subtask">38. Monitor /var/log/secure live and redirect output to /tmp/secure_tail.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+    <div class="subtask">39. Identify which service is responsible for writing system logs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>“Excellent — you’re learning how to diagnose issues like a pro.”</li>
+  </ul>
+</div>
+
+    <!-- SECTION 8 -->
+    <div id="section8" class="task">
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+      🧩 Section 8: Package Management
+    </h2>
+
+    <h3>Objective: Manage packages efficiently.</h3>
+    <p>
+    Chris assigns another system administration task:
+    </p>
+
+    <h3>🏢 Scenario</h3>
+    <p>
+    “Alex, before deploying new tools, ensure our system has all the essential packages and development utilities. Let’s handle this through YUM package management.”
+    </p>
+
+    <h3>✅ Tasks</h3>
+      <div class="subtask">40.List installed httpd packages to check dependencies. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">41. Install wget, telnet, and nmap using YUM — standard network troubleshooting tools. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">42. Install a group package "@RPM Development Tools" and verify if installed. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>Chris: System admin explores how to inspect installed packages, install new utilities, and verifies dependencies, confirm package installations, and practice managing both individual and group packages — key skills for efficient RHEL system administration.</li>
+  </ul>
+
+    <!-- SECTION 9 -->
+    <div id="section9" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🧩 Section 9: Storage Management 
+  </h2>
+
+  <h3>🎯 Objective: Work with partitions, LVM, and NFS.</h3>
+  <p>
+   Set up partitions, LVM, and share data over NFS.
+  </p>
+  
+  <h3>🏢 Scenario</h3>
+  <p>
+    Chris continues mentoring Alex on advanced system administration:
+    <blockquote>“Alex, it’s time to dive into storage management. We’ll create partitions, logical volumes, and even share storage over the network. This will help you understand how enterprise systems handle disks, mount points, and shared access.”</blockquote>
+    You access the VM from the vSphere console and begin troubleshooting.
+  </p>
+ 
+      <h3>✅ Tasks</h3>
+      <p><b>Scenario:</b>“Make sure two new disks /dev/sdb and /dev/sdc are attached with your VM by using<code>lsblk</code></p>
+      <div class="subtask">43.Create a 1GB partition /dev/sdb1 and format it as xfs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">44. Mount /dev/sdb1 on /mnt/data and make it persistent across reboot.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">45. Create a 512MB /dev/sdb2 swap partition and activate it.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">46. Create a volume group vg_test using /dev/sdc.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">47. Create a logical volume lv_data of size 1G in vg_test, format as xfs, and mount to /mnt/lvdata.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">48. Setup NFS server to share /mnt/lvdata and allow access to everyone. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>“Good — this is how we confgiure storage and prepare shared environments for multiple teams.”</li>
+  </ul>
+  </div>
+
+<!-- SECTION 10 -->
+<div id="section10" class="task">
+  <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+    🌀 Section 10: DevOps Tools - Ansible
+  </h2>
+
+  <h3>🎯 Objective: Automate everything you just did.</h3>
+  <p>
+    Finally, Chris moves Alex to the Ansible automation part: configure the control node and run through automation scenarios to replace manual steps with repeatable playbooks and roles.
+  </p>
+  
+  <h3>🏢 Scenario</h3>
+  <p>
+    “Time to replace your manual work with Ansible playbooks. Configure the control node, create inventories and roles, test with ad-hoc commands, and automate deployments. Make sure the <code>ansi</code> user can run everything required without password prompts so automation runs smoothly.”
+  </p>
+
+  <h3>✅ Tasks</h3>
+
+  <div class="subtask">
+    <strong>49. Setup Ansible Local Environment</strong>
+    <div class="details">
+      <ul>
+        <li>Ensure Ansible is installed and create user <code>ansi</code>.</li>
+        <li>Give <code>ansi</code> sudo privilege and exchange SSH keys with managed nodes for passwordless authentication.</li>
+        <li>Configure <code>/home/ansi/ansible/ansible.cfg</code> to use:
+          <ul>
+            <li>inventory: <code>/home/ansi/ansible/inventory</code></li>
+            <li>roles path: <code>/home/ansi/ansible/roles</code></li>
+            <li>collections path: <code>/home/ansi/ansible/mycollection</code></li>
+          </ul>
+        </li>
+        <li>Set default remote user to <code>ansi</code>, disable host key checking, and enable privilege escalation with no password in the config.</li>
+      </ul>
+    </div>
+    <span class="buttons"><button>Done</button><button>Revisit</button></span>
+  </div>
+
+  <div class="subtask">
+    <strong>50. Create an Inventory File</strong>
+    <div class="details">
+      <ul>
+        <li>Create <code>/home/ansi/ansible/inventory</code> with groups <code>[webservers]</code> and <code>[dbservers]</code>.</li>
+        <li>Check Ansible version and list hosts defined in inventory.</li>
+        <li>Test connectivity to managed nodes using an ad-hoc ping.</li>
+      </ul>
+    </div>
+    <span class="buttons"><button>Done</button><button>Revisit</button></span>
+  </div>
+
+  <div class="subtask">
+    <strong>51. Run Ad-Hoc Commands</strong>
+    <div class="details">
+      <ol>
+        <li>Create directory <code>/opt/adhoc_test</code> on all hosts.</li>
+        <li>Install <code>nmap</code> and <code>vim</code> packages via ad-hoc YUM/ansible modules.</li>
+        <li>Verify uptime of the <code>webservers</code> host group.</li>
+      </ol>
+    </div>
+    <span class="buttons"><button>Done</button><button>Revisit</button></span>
+  </div>
+
+  <div class="subtask">
+    <strong>52. Write a Simple Playbook</strong>
+    <div class="details">
+      <ul>
+        <li>Create <code>/home/ansi/ansible/install_tools.yml</code> to:
+          <ul>
+            <li>Install <code>wget</code> and <code>curl</code>.</li>
+            <li>Start and enable <code>crond</code>.</li>
+          </ul>
+        </li>
+        <li>Create <code>/home/ansi/ansible/var_example.yml</code> with variable <code>pkg_list: ['tree','git']</code> and use it to install both packages.</li>
+        <li>Create <code>/home/ansible/conditional.yml</code> that creates <code>/tmp/condition_pass</code> only when OS family is RedHat.</li>
+        <li>Loop to create directories: <code>/opt/app1</code>, <code>/opt/app2</code>, <code>/opt/app3</code>.</li>
+        <li>Use a Jinja2 template <code>/tmp/message.j2</code> to generate <code>/opt/app1/info.txt</code> containing facts: hostname, ipaddress, fqdn, cpu count, total memory (MB).</li>
+      </ul>
+    </div>
+    <span class="buttons"><button>Done</button><button>Revisit</button></span>
+  </div>
+
+  <div class="subtask">
+    <strong>53. Manage Complex Plays</strong>
+    <div class="details">
+      <p>Write <code>/home/ansi/ansible/complex.yml</code> containing two plays:</p>
+      <ul>
+        <li>Play targeting <code>[webservers]</code> to install and start <code>nginx</code>.</li>
+        <li>Play targeting <code>[dbservers]</code> to install, start, and enable <code>mariadb-server</code>.</li>
+      </ul>
+    </div>
+    <span class="buttons"><button>Done</button><button>Revisit</button></span>
+  </div>
+
+  <div class="subtask">
+    <strong>54. Create a Role (webrole)</strong>
+    <div class="details">
+      <p>Create role <code>webrole</code> under <code>/home/ansi/ansible/roles/</code> with the following structure:</p>
+      <ul>
+        <li><strong>Variables:</strong>
+          <pre>
+package_name:
+  - httpd
+  - firewalld
+service_name:
+  - httpd
+  - firewalld
+rule:
+  - http
+  - https
+          </pre>
+        </li>
+        <li><strong>Tasks:</strong>
+          <ul>
+            <li>Install <code>httpd</code> (and firewalld).</li>
+            <li>Copy <code>/etc/httpd/conf/httpd.conf</code> to <code>/tmp/httpd.conf</code> as a backup.</li>
+            <li>Change httpd listen port to <code>8090</code> in the config and notify a handler to add the port to firewalld.</li>
+            <li>Copy file <code>files/index.html</code> content “I love ansible and it’s easy to learn” to <code>/var/www/html/index.html</code>.</li>
+          </ul>
+        </li>
+        <li><strong>Handlers:</strong>
+          <ul>
+            <li>Restart <code>httpd</code> when config changes.</li>
+            <li>Add firewalld port when notified about port change.</li>
+          </ul>
+        </li>
+        <li>Run this role via <code>/home/ansi/ansible/httpd.yml</code> against the <code>[webservers]</code> group.</li>
+      </ul>
+    </div>
+    <span class="buttons"><button>Done</button><button>Revisit</button></span>
+  </div>
+
+  <div class="subtask">
+    <strong>55. Create Playbooks Using System Roles</strong>
+    <div class="details">
+      <ul>
+        <li>Create <code>selinux.yml</code> to use system roles and enforce:
+          <ul>
+            <li>SELinux mode = <code>permissive</code> on all managed nodes.</li>
+            <li>SELinux policy = <code>targeted</code>.</li>
+          </ul>
+        </li>
+        <li>Create <code>timesync.yml</code> using system/ntp/chrony roles to:
+          <ul>
+            <li>Configure NTP server(s) with <code>iburst</code>.</li>
+            <li>Run this playbook against the <code>dev</code> group of managed nodes.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><em>“Always check SELinux before blaming the firewall!”</em> jokes Chris.</p>
+    </div>
+    <span class="buttons"><button>Done</button><button>Revisit</button></span>
+  </div>
+
+  <h3>🧠 Summary</h3>
+  <ul>
+    <li>This section teaches how to convert manual sysadmin tasks into repeatable Ansible automation: environment setup, inventory management, ad-hoc commands, playbook development, roles creation, and leveraging system roles for compliance (SELinux, time sync).</li>
+    <li>Key outcomes: a working Ansible control node (<code>ansi</code>), tested inventory and connectivity, reusable playbooks and roles (e.g., <code>webrole</code>), and system-level automation using community/system roles for consistent state across managed nodes.</li>
+    <li>Result: Alex moves from one-off commands to reliable, idempotent infrastructure-as-code—exactly what separates an admin from an automation engineer.</li>
+  </ul>
+</div>
+
+  </div>
+
+ <script>
+    function showTab(id, el) {
+      document.querySelectorAll('.task').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    document.querySelectorAll('.buttons button').forEach(button => {
+      button.addEventListener('click', function () {
+        const parent = button.closest('.subtask');
+        const allButtons = parent.querySelectorAll('button');
+        allButtons.forEach(btn => btn.classList.remove('done', 'revisit'));
+
+        if (button.textContent === 'Done') {
+          button.classList.add('done');
+        } else if (button.textContent === 'Revisit') {
+          button.classList.add('revisit');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
