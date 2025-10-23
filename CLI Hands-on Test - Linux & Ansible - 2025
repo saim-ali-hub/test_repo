@@ -111,7 +111,7 @@
     <button class="tab-button" onclick="showTab('section8', this)">8. Package Management</button>
     <button class="tab-button" onclick="showTab('section9', this)">9. Storage Management</button>
     <button class="tab-button" onclick="showTab('section10', this)">10. DevOps Tools - Ansible</button>
-
+    <button class="tab-button" onclick="showTab('section11', this)">11. Epilogue - Ansible</button>
   </div>
 
   <div class="content">
@@ -565,7 +565,7 @@ rule:
 <!-- SECTION 11 -->
     <div id="Epilogue" class="task active">
     <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
-       🧩 Epilogue
+       🧩 Section 11: Epilogue
     </h2>
 
      <h3> <p><b>By the end of the week, Alex successfully completes all assigned Linux and Ansible automation tasks. Manager John and Team Lead Chris praise him for his methodical approach and documentation skills. </b></p> </h3>
