@@ -110,7 +110,7 @@
     <button class="tab-button" onclick="showTab('section7', this)">7. Logs & Troubleshooting</button>
     <button class="tab-button" onclick="showTab('section8', this)">8. Package Management</button>
     <button class="tab-button" onclick="showTab('section9', this)">9. Storage Management</button>
-    <button class="tab-button" onclick="showTab('section10', this)">6. DevOps Tools - Ansible</button>
+    <button class="tab-button" onclick="showTab('section10', this)">10. DevOps Tools - Ansible</button>
 
   </div>
 
@@ -368,6 +368,7 @@
   <ul>
     <li>Chris: System admin explores how to inspect installed packages, install new utilities, and verifies dependencies, confirm package installations, and practice managing both individual and group packages — key skills for efficient RHEL system administration.</li>
   </ul>
+</div>
 
     <!-- SECTION 9 -->
     <div id="section9" class="task">
