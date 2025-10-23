@@ -562,7 +562,20 @@ rule:
     <li>Result: Alex moves from one-off commands to reliable, idempotent infrastructure-as-code—exactly what separates an admin from an automation engineer.</li>
   </ul>
 </div>
+<!-- SECTION 11 -->
+    <div id="Epilogue" class="task active">
+    <h2 style="font-size: 26px; font-weight: 900; margin-bottom: 15px;">
+       🧩 Epilogue
+    </h2>
 
+     <h3> <p><b>By the end of the week, Alex successfully completes all assigned Linux and Ansible automation tasks. Manager John and Team Lead Chris praise him for his methodical approach and documentation skills. </b></p> </h3>
+        <div class="subtask"> John concludes: </div>
+        <div class="subtask"> “Excellent work, Alex! You’ve demonstrated everything we look for in a Linux Engineer — from core administration to full automation.” </div>
+        <div class="subtask">Alex smiles and types in his terminal: </div>
+        
+     <h3> <p><b>echo "Mission accomplished — Week 1 completed successfully!"</b></p>
+   </div> </h3>
+  </div>
   </div>
 
  <script>
