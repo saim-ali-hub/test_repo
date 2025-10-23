@@ -111,7 +111,8 @@
     <button class="tab-button" onclick="showTab('section8', this)">8. Package Management</button>
     <button class="tab-button" onclick="showTab('section9', this)">9. Storage Management</button>
     <button class="tab-button" onclick="showTab('section10', this)">10. DevOps Tools - Ansible</button>
-    <button class="tab-button" onclick="showTab('section11', this)">11. Epilogue - Ansible</button>
+    <button class="tab-button" onclick="showTab('section11', this)">11. Epilogue</button>
+
   </div>
 
   <div class="content">
@@ -389,7 +390,7 @@
   </p>
  
       <h3>✅ Tasks</h3>
-      <p><b>Scenario:</b>“Make sure two new disks /dev/sdb and /dev/sdc are attached with your VM by using<code>lsblk</code></p>
+      <p><b>Scenario:</b>“Make sure two new disks /dev/sdb and /dev/sdc are attached with your VM by using <code>lsblk</code></p>
       <div class="subtask">43.Create a 1GB partition /dev/sdb1 and format it as xfs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">44. Mount /dev/sdb1 on /mnt/data and make it persistent across reboot.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">45. Create a 512MB /dev/sdb2 swap partition and activate it.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
@@ -426,7 +427,7 @@
     <div class="details">
       <ul>
         <li>Ensure Ansible is installed and create user <code>ansi</code>.</li>
-        <li>Give <code>ansi</code> sudo privilege and exchange SSH keys with managed nodes for passwordless authentication.</li>
+        <li>Assign sudo privilege to <code>ansi</code> user and exchange SSH keys with managed nodes for passwordless authentication.</li>
         <li>Configure <code>/home/ansi/ansible/ansible.cfg</code> to use:
           <ul>
             <li>inventory: <code>/home/ansi/ansible/inventory</code></li>
@@ -434,7 +435,7 @@
             <li>collections path: <code>/home/ansi/ansible/mycollection</code></li>
           </ul>
         </li>
-        <li>Set default remote user to <code>ansi</code>, disable host key checking, and enable privilege escalation with no password in the config.</li>
+        <li>Set default remote user to <code>ansi</code>, disable host key checking, and enable privilege escalation with no password in the ansible.cfg.</li>
       </ul>
     </div>
     <span class="buttons"><button>Done</button><button>Revisit</button></span>
@@ -457,7 +458,7 @@
     <div class="details">
       <ol>
         <li>Create directory <code>/opt/adhoc_test</code> on all hosts.</li>
-        <li>Install <code>nmap</code> and <code>vim</code> packages via ad-hoc YUM/ansible modules.</li>
+        <li>Install <code>nmap</code> and <code>vim</code> packages.</li>
         <li>Verify uptime of the <code>webservers</code> host group.</li>
       </ol>
     </div>
@@ -468,15 +469,15 @@
     <strong>52. Write a Simple Playbook</strong>
     <div class="details">
       <ul>
-        <li>Create <code>/home/ansi/ansible/install_tools.yml</code> to:
+        <li>Create <code>/home/ansi/ansible/install_tools.yml playbook</code> to:
           <ul>
-            <li>Install <code>wget</code> and <code>curl</code>.</li>
-            <li>Start and enable <code>crond</code>.</li>
+            <li>Install <code>wget</code> and <code>chrony</code>.</li>
+            <li>Start and enable <code>cronyd</code>.</li>
           </ul>
         </li>
-        <li>Create <code>/home/ansi/ansible/var_example.yml</code> with variable <code>pkg_list: ['tree','git']</code> and use it to install both packages.</li>
-        <li>Create <code>/home/ansible/conditional.yml</code> that creates <code>/tmp/condition_pass</code> only when OS family is RedHat.</li>
-        <li>Loop to create directories: <code>/opt/app1</code>, <code>/opt/app2</code>, <code>/opt/app3</code>.</li>
+        <li>Create variable <code>pkg_list: ['tree','git']</code> and use it to install both packages.</li>
+        <li>Create "when" conditional to create a file <code>/tmp/condition_pass</code> only when OS family is RedHat.</li>
+        <li>Use Loop to create directories: <code>/opt/app1</code>, <code>/opt/app2</code>, <code>/opt/app3</code>.</li>
         <li>Use a Jinja2 template <code>/tmp/message.j2</code> to generate <code>/opt/app1/info.txt</code> containing facts: hostname, ipaddress, fqdn, cpu count, total memory (MB).</li>
       </ul>
     </div>
@@ -486,7 +487,7 @@
   <div class="subtask">
     <strong>53. Manage Complex Plays</strong>
     <div class="details">
-      <p>Write <code>/home/ansi/ansible/complex.yml</code> containing two plays:</p>
+      <p>Write <code>/home/ansi/ansible/complex.yml</code> playbook, containing two plays:</p>
       <ul>
         <li>Play targeting <code>[webservers]</code> to install and start <code>nginx</code>.</li>
         <li>Play targeting <code>[dbservers]</code> to install, start, and enable <code>mariadb-server</code>.</li>
@@ -515,15 +516,15 @@ rule:
         </li>
         <li><strong>Tasks:</strong>
           <ul>
-            <li>Install <code>httpd</code> (and firewalld).</li>
+            <li>Install <code>httpd</code> and firewalld.</li>
             <li>Copy <code>/etc/httpd/conf/httpd.conf</code> to <code>/tmp/httpd.conf</code> as a backup.</li>
-            <li>Change httpd listen port to <code>8090</code> in the config and notify a handler to add the port to firewalld.</li>
-            <li>Copy file <code>files/index.html</code> content “I love ansible and it’s easy to learn” to <code>/var/www/html/index.html</code>.</li>
+            <li>Change httpd listen port to <code>8090</code> <code>/etc/httpd/conf/httpd.conf</code> (configuration file) and notify a handler to add the port to firewalld.</li>
+            <li>Copy file <code>files/index.html</code> containing content “I love ansible and it’s easy to learn” to <code>/var/www/html/index.html</code>.</li>
           </ul>
         </li>
         <li><strong>Handlers:</strong>
           <ul>
-            <li>Restart <code>httpd</code> when config changes.</li>
+            <li>Restart <code>httpd</code> when package httpd installed and change notified.</li>
             <li>Add firewalld port when notified about port change.</li>
           </ul>
         </li>
@@ -537,27 +538,25 @@ rule:
     <strong>55. Create Playbooks Using System Roles</strong>
     <div class="details">
       <ul>
-        <li>Create <code>selinux.yml</code> to use system roles and enforce:
+        <li>Create <code>selinux.yml</code> to use system roles and and run on all managed nodes:
           <ul>
-            <li>SELinux mode = <code>permissive</code> on all managed nodes.</li>
-            <li>SELinux policy = <code>targeted</code>.</li>
+            <li>Set SELinux mode = <code>permissive</code>.</li>
+            <li>Set SELinux policy = <code>targeted</code>.</li>
           </ul>
         </li>
-        <li>Create <code>timesync.yml</code> using system/ntp/chrony roles to:
+        <li>Create <code>timesync.yml</code> using system roles and run on all managed nodes:
           <ul>
             <li>Configure NTP server(s) with <code>iburst</code>.</li>
-            <li>Run this playbook against the <code>dev</code> group of managed nodes.</li>
           </ul>
         </li>
       </ul>
-      <p><em>“Always check SELinux before blaming the firewall!”</em> jokes Chris.</p>
     </div>
     <span class="buttons"><button>Done</button><button>Revisit</button></span>
   </div>
 
   <h3>🧠 Summary</h3>
   <ul>
-    <li>This section teaches how to convert manual sysadmin tasks into repeatable Ansible automation: environment setup, inventory management, ad-hoc commands, playbook development, roles creation, and leveraging system roles for compliance (SELinux, time sync).</li>
+    <li>This is how to convert manual sysadmin tasks into repeatable Ansible automation: environment setup, inventory management, ad-hoc commands, playbook development, roles creation, and leveraging system roles for compliance (SELinux, time sync).</li>
     <li>Key outcomes: a working Ansible control node (<code>ansi</code>), tested inventory and connectivity, reusable playbooks and roles (e.g., <code>webrole</code>), and system-level automation using community/system roles for consistent state across managed nodes.</li>
     <li>Result: Alex moves from one-off commands to reliable, idempotent infrastructure-as-code—exactly what separates an admin from an automation engineer.</li>
   </ul>
@@ -575,7 +574,6 @@ rule:
         
      <h3> <p><b>echo "Mission accomplished — Week 1 completed successfully!"</b></p>
    </div> </h3>
-  </div>
   </div>
 
  <script>
