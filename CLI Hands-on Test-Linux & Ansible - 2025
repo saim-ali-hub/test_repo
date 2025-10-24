@@ -187,7 +187,7 @@
 
   <h3>✅ Tasks</h3>
   <div class="subtask">13. Find all files in /etc modified in the last 1 day and store results in /lab1/find_results.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-  <div class="subtask">14. Archive /lab1/docs and /lab1/scripts into /root/lab1_backup.tar.gz. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+  <div class="subtask">14. Archive /lab1/docs and /lab1/config into /root/lab1_backup.tar.gz. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">15. Extract the archive into /tmp/lab_restore/.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">16. Compress /lab1/info.txt using bzip2.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   <div class="subtask">17. Compare the checksums of /etc/passwd and /lab1/docs/passwd.bak using md5sum.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
