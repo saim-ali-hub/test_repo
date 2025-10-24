@@ -159,7 +159,7 @@
 <div class="subtask">9. Create a hard link /lab1/docs/hard_passwd pointing to /lab1/docs/passwd.bak.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">10. Create a symbolic link /lab1/docs/sym_info pointing to /lab1/info.txt.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">11. Set permissions on /lab1/docs so that only the owner can read/write, others have no access.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">12. Set the sticky bit on /lab1/configs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">12. Set the sticky bit on /lab1/config.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 
   <h3>🧠 Summary</h3>
   <ul>
