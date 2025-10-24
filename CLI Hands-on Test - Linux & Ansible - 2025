@@ -397,6 +397,7 @@
 <div class="subtask">46. Create a volume group vg_test using /dev/sdc.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">47. Create a logical volume lv_data of size 1G in vg_test, format as xfs, and mount to /mnt/lvdata.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">48. Setup NFS server to share /mnt/lvdata and allow access to everyone. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">49. While on the NFS client machine, mount the /data NFS share exported from the server 192.168.15.26 to the local directory /mount-data, and ensure the mount is persistent across reboots. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   
   <h3>🧠 Summary</h3>
   <ul>
@@ -423,7 +424,7 @@
   <h3>✅ Tasks</h3>
 
   <div class="subtask">
-    <strong>49. Setup Ansible Local Environment</strong>
+    <strong>50. Setup Ansible Local Environment</strong>
     <div class="details">
       <ul>
         <li>Ensure Ansible is installed and create user <code>ansi</code>.</li>
@@ -442,7 +443,7 @@
   </div>
 
   <div class="subtask">
-    <strong>50. Create an Inventory File</strong>
+    <strong>51. Create an Inventory File</strong>
     <div class="details">
       <ul>
         <li>Create <code>/home/ansi/ansible/inventory</code> with groups <code>[webservers]</code> and <code>[dbservers]</code>.</li>
@@ -454,7 +455,7 @@
   </div>
 
   <div class="subtask">
-    <strong>51. Run Ad-Hoc Commands</strong>
+    <strong>52. Run Ad-Hoc Commands</strong>
     <div class="details">
       <ol>
         <li>Create directory <code>/opt/adhoc_test</code> on all hosts.</li>
@@ -466,7 +467,7 @@
   </div>
 
   <div class="subtask">
-    <strong>52. Write a Simple Playbook</strong>
+    <strong>53. Write a Simple Playbook</strong>
     <div class="details">
       <ul>
         <li>Create <code>/home/ansi/ansible/install_tools.yml playbook</code> to:
@@ -485,7 +486,7 @@
   </div>
 
   <div class="subtask">
-    <strong>53. Manage Complex Plays</strong>
+    <strong>54. Manage Complex Plays</strong>
     <div class="details">
       <p>Write <code>/home/ansi/ansible/complex.yml</code> playbook, containing two plays:</p>
       <ul>
@@ -497,7 +498,7 @@
   </div>
 
   <div class="subtask">
-    <strong>54. Create a Role (webrole)</strong>
+    <strong>55. Create a Role (webrole)</strong>
     <div class="details">
       <p>Create role <code>webrole</code> under <code>/home/ansi/ansible/roles/</code> with the following structure:</p>
       <ul>
@@ -535,7 +536,7 @@ rule:
   </div>
 
   <div class="subtask">
-    <strong>55. Create Playbooks Using System Roles</strong>
+    <strong>56. Create Playbooks Using System Roles</strong>
     <div class="details">
       <ul>
         <li>Create <code>selinux.yml</code> to use system roles and and run on all managed nodes:
