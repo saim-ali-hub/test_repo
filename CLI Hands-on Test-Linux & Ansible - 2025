@@ -446,7 +446,7 @@
     <strong>51. Create an Inventory File</strong>
     <div class="details">
       <ul>
-        <li>Create <code>/home/ansi/ansible/inventory</code> with groups <code>[webservers]</code> and <code>[dbservers]. Make sure managed node should be in webservers group while control node should be in dbservers group</code>.</li>
+        <li>Create <code>/home/ansi/ansible/inventory</code> with groups <code>[webservers]</code> and <code>[dbservers]</code>. Make sure managed node should be in webservers group while control node should be in dbservers group.</li>
         <li>Check Ansible version and list hosts defined in inventory.</li>
         <li>Test connectivity to managed nodes using an ad-hoc ping.</li>
       </ul>
