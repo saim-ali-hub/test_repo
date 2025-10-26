@@ -391,11 +391,11 @@
  
       <h3>✅ Tasks</h3>
       <p><b>Scenario:</b>“Make sure two new disks /dev/sdb and /dev/sdc are attached with your VM by using <code>lsblk</code></p>
-      <div class="subtask">43.Create a 1GB partition /dev/sdb1 and format it as xfs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+      <div class="subtask">43.Create a 500M partition /dev/sdb1 and format it as xfs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">44. Mount /dev/sdb1 on /mnt/data and make it persistent across reboot.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">45. Create a 512MB /dev/sdb2 swap partition and activate it.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">46. Create a volume group vg_test using /dev/sdc.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
-<div class="subtask">47. Create a logical volume lv_data of size 1G in vg_test, format as xfs, and mount to /mnt/lvdata.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
+<div class="subtask">47. Create a logical volume lv_data of size 1000M in vg_test, format as xfs, and mount to /mnt/lvdata.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">48. Setup NFS server to share /mnt/lvdata and allow access to everyone. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">49. While on the NFS client machine, mount the /data NFS share exported from the server 192.168.15.26 to the local directory /mount-data, and ensure the mount is persistent across reboots. <span class="buttons"><button>Done</button><button>Revisit</button></span></div>
   
