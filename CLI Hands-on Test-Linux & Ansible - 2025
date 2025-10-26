@@ -539,15 +539,15 @@ rule:
     <strong>56. Create Playbooks Using System Roles</strong>
     <div class="details">
       <ul>
-        <li>Create <code>selinux.yml</code> to use system roles and and run on all managed nodes:
+        <li>Create playbook "selinux.yml". Use selinux role from rhel-system-roles and and run on all managed nodes:
           <ul>
             <li>Set SELinux mode = <code>permissive</code>.</li>
             <li>Set SELinux policy = <code>targeted</code>.</li>
           </ul>
         </li>
-        <li>Create <code>timesync.yml</code> using system roles and run on all managed nodes:
+        <li>Create playbook "timesync.yml". Use  timesync role from rhel-system-roles and and run on all managed nodes:
           <ul>
-            <li>Configure NTP server(s) with <code>iburst</code>.</li>
+            <li>Configure the role using time server 192.168.15.5 with <code>iburst</code> parameter enabled.</li>
           </ul>
         </li>
       </ul>
