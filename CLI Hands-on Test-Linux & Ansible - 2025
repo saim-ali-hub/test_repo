@@ -390,7 +390,7 @@
   </p>
  
       <h3>✅ Tasks</h3>
-      <p><b>Scenario:</b>“Make sure two new disks /dev/sdb and /dev/sdc are attached with your VM by using <code>lsblk</code></p>
+      <p><b>Scenario:</b>“Ensure that two 1G disks, /dev/sdb and /dev/sdc, are attached with your VM. You can verify this by running the command <code>lsblk</code></p>
       <div class="subtask">43.Create a 500M partition /dev/sdb1 and format it as xfs.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
       <div class="subtask">44. Mount /dev/sdb1 on /mnt/data and make it persistent across reboot.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
 <div class="subtask">45. Create a 512MB /dev/sdb2 swap partition and activate it.<span class="buttons"><button>Done</button><button>Revisit</button></span></div>
